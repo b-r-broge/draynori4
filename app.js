@@ -142,7 +142,7 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', function(req, res) {
-  res.redirect('/api/home');
+  res.redirect('/home');
 });
 
 //==========================//
