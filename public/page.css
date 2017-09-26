@@ -1,0 +1,104 @@
+* {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+h3 {
+  z-index: 5;
+  position: absolute;
+  margin-left: -38vw;
+  margin-top: -20vh;
+  font-size: 30px;
+  font-family: 'Frijole', cursive;
+  transform: rotate(-75deg);
+}
+
+.bodywrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+h2 {
+  font-family: 'Black Ops One', cursive;
+  width: 50vw;
+  font-size: 30px;
+  transform: rotate(3deg);
+}
+
+p {
+  font-size: 35px;
+  transform: rotate(8deg);
+  color: #606060;
+  font-family: 'Cherry Cream Soda', cursive;
+}
+
+h6 {
+  margin-top: -30px;
+  font-size: 17px;
+  transform: rotate(-4deg);
+  margin-left: 10px;
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+h5 {
+  font-size: 20px;
+  margin-top: -30px;
+  transform: rotate(3deg);
+}
+
+.linkContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 700px;
+}
+
+a {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: black;
+  display: flex;
+  flex-basis: 0.5;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 300px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+  transform: scale(1.15);
+  flex-grow: .5;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.plink {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+textarea {
+  width: 40vw;
+  height: 30vh;
+}
