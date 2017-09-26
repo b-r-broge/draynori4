@@ -98,7 +98,6 @@ const mongoose = require('mongoose');
 const mustacheExpress = require('mustache-express');
 // const cors = require('cors')
 const app = express();
-// const url = 'mongodb://EthanJarrell:EJ3102nl1@ds147884.mlab.com:47884/draynori2';
 const url = process.env.MONGOLAB_URI;
 //=========================//
 
