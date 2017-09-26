@@ -155,6 +155,14 @@ app.get('/home', function(req, res) {
 
 //==========================//
 
+//====RENDER THANKS PAGE===//
+
+app.get('/thanks', function(req, res) {
+  res.render('thanks')
+});
+
+//==========================//
+
 //====RENDER PAGE 1===//
 
 app.get('/page1', function(req, res) {
@@ -885,7 +893,7 @@ app.post('/page27', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page27')
+  res.redirect('/thanks')
 });
 });
 
@@ -912,7 +920,7 @@ app.post('/page28', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page28')
+  res.redirect('/thanks')
 });
 });
 
@@ -939,7 +947,7 @@ app.post('/page29', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page29')
+  res.redirect('/thanks')
 });
 });
 
@@ -966,7 +974,7 @@ app.post('/page30', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page30')
+  res.redirect('/thanks')
 });
 });
 
@@ -993,7 +1001,7 @@ app.post('/page31', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page31')
+  res.redirect('/thanks')
 });
 });
 
@@ -1020,7 +1028,7 @@ app.post('/page32', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page32')
+  res.redirect('/thanks')
 });
 });
 
@@ -1047,7 +1055,7 @@ app.post('/page33', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page33')
+  res.redirect('/thanks')
 });
 });
 
@@ -1074,7 +1082,7 @@ app.post('/page34', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page34')
+  res.redirect('/thanks')
 });
 });
 
@@ -1101,7 +1109,7 @@ app.post('/page35', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page35')
+  res.redirect('/thanks')
 });
 });
 
@@ -1128,7 +1136,7 @@ app.post('/page36', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page36')
+  res.redirect('/thanks')
 });
 });
 
@@ -1155,7 +1163,7 @@ app.post('/page37', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page37')
+  res.redirect('/thanks')
 });
 });
 
@@ -1182,7 +1190,7 @@ app.post('/page38', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page38')
+  res.redirect('/thanks')
 });
 });
 
@@ -1209,7 +1217,7 @@ app.post('/page39', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page39')
+  res.redirect('/thanks')
 });
 });
 
@@ -1236,7 +1244,7 @@ app.post('/page40', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page40')
+  res.redirect('/thanks')
 });
 });
 
@@ -1263,7 +1271,7 @@ app.post('/page41', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page41')
+  res.redirect('/thanks')
 });
 });
 
@@ -1290,7 +1298,7 @@ app.post('/page42', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page42')
+  res.redirect('/thanks')
 });
 });
 
@@ -1317,7 +1325,7 @@ app.post('/page43', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page43')
+  res.redirect('/thanks')
 });
 });
 
@@ -1344,7 +1352,7 @@ app.post('/page44', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page44')
+  res.redirect('/thanks')
 });
 });
 
@@ -1371,7 +1379,7 @@ app.post('/page45', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page45')
+  res.redirect('/thanks')
 });
 });
 
@@ -1398,7 +1406,7 @@ app.post('/page46', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page46')
+  res.redirect('/thanks')
 });
 });
 
@@ -1425,7 +1433,7 @@ app.post('/page47', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page47')
+  res.redirect('/thanks')
 });
 });
 
@@ -1452,7 +1460,7 @@ app.post('/page48', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page48')
+  res.redirect('/thanks')
 });
 });
 
@@ -1479,7 +1487,7 @@ app.post('/page49', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page49')
+  res.redirect('/thanks')
 });
 });
 
@@ -1506,7 +1514,7 @@ app.post('/page50', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page50')
+  res.redirect('/thanks')
 });
 });
 
@@ -1533,7 +1541,7 @@ app.post('/page51', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page51')
+  res.redirect('/thanks')
 });
 });
 
@@ -1560,7 +1568,7 @@ app.post('/page52', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page52')
+  res.redirect('/thanks')
 });
 });
 
@@ -1587,7 +1595,7 @@ app.post('/page53', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page53')
+  res.redirect('/thanks')
 });
 });
 
@@ -1614,7 +1622,7 @@ app.post('/page54', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page54')
+  res.redirect('/thanks')
 });
 });
 
@@ -1641,7 +1649,7 @@ app.post('/page55', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page55')
+  res.redirect('/thanks')
 });
 });
 
@@ -1668,7 +1676,7 @@ app.post('/page56', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page56')
+  res.redirect('/thanks')
 });
 });
 
@@ -1695,7 +1703,7 @@ app.post('/page57', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page57')
+  res.redirect('/thanks')
 });
 });
 
@@ -1722,7 +1730,7 @@ app.post('/page58', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page58')
+  res.redirect('/thanks')
 });
 });
 
@@ -1749,7 +1757,7 @@ app.post('/page59', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page59')
+  res.redirect('/thanks')
 });
 });
 
@@ -1776,7 +1784,7 @@ app.post('/page60', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page60')
+  res.redirect('/thanks')
 });
 });
 
@@ -1803,7 +1811,7 @@ app.post('/page61', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page61')
+  res.redirect('/thanks')
 });
 });
 
@@ -1830,7 +1838,7 @@ app.post('/page62', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page62')
+  res.redirect('/thanks')
 });
 });
 
@@ -1857,7 +1865,7 @@ app.post('/page63', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page63')
+  res.redirect('/thanks')
 });
 });
 
@@ -1884,7 +1892,7 @@ app.post('/page64', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page64')
+  res.redirect('/thanks')
 });
 });
 
@@ -1911,7 +1919,7 @@ app.post('/page65', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page65')
+  res.redirect('/thanks')
 });
 });
 
@@ -1938,7 +1946,7 @@ app.post('/page66', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page66')
+  res.redirect('/thanks')
 });
 });
 
@@ -1965,7 +1973,7 @@ app.post('/page67', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page67')
+  res.redirect('/thanks')
 });
 });
 
@@ -1992,7 +2000,7 @@ app.post('/page68', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page68')
+  res.redirect('/thanks')
 });
 });
 
@@ -2019,7 +2027,7 @@ app.post('/page69', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page69')
+  res.redirect('/thanks')
 });
 });
 
@@ -2046,7 +2054,7 @@ app.post('/page70', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page70')
+  res.redirect('/thanks')
 });
 });
 
@@ -2073,7 +2081,7 @@ app.post('/page71', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page71')
+  res.redirect('/thanks')
 });
 });
 
@@ -2100,7 +2108,7 @@ app.post('/page72', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page72')
+  res.redirect('/thanks')
 });
 });
 
@@ -2127,7 +2135,7 @@ app.post('/page73', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page73')
+  res.redirect('/thanks')
 });
 });
 
@@ -2154,7 +2162,7 @@ app.post('/page74', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page74')
+  res.redirect('/thanks')
 });
 });
 
@@ -2181,7 +2189,7 @@ app.post('/page75', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page75')
+  res.redirect('/thanks')
 });
 });
 
@@ -2208,7 +2216,7 @@ app.post('/page76', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page76')
+  res.redirect('/thanks')
 });
 });
 
@@ -2235,7 +2243,7 @@ app.post('/page77', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page77')
+  res.redirect('/thanks')
 });
 });
 
@@ -2262,7 +2270,7 @@ app.post('/page78', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page78')
+  res.redirect('/thanks')
 });
 });
 
@@ -2289,7 +2297,7 @@ app.post('/page79', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page79')
+  res.redirect('/thanks')
 });
 });
 
@@ -2316,7 +2324,7 @@ app.post('/page80', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page80')
+  res.redirect('/thanks')
 });
 });
 
@@ -2343,7 +2351,7 @@ app.post('/page81', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page81')
+  res.redirect('/thanks')
 });
 });
 
@@ -2370,7 +2378,7 @@ app.post('/page82', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page82')
+  res.redirect('/thanks')
 });
 });
 
@@ -2397,7 +2405,7 @@ app.post('/page83', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page83')
+  res.redirect('/thanks')
 });
 });
 
@@ -2424,7 +2432,7 @@ app.post('/page84', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page84')
+  res.redirect('/thanks')
 });
 });
 
@@ -2451,7 +2459,7 @@ app.post('/page85', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page85')
+  res.redirect('/thanks')
 });
 });
 
@@ -2478,7 +2486,7 @@ app.post('/page86', function(req, res) {
     option2: req.body.option2,
     option3: req.body.option3,
   }).then(page => {
-  res.render('page86')
+  res.redirect('/thanks')
 });
 });
 
