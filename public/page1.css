@@ -40,7 +40,7 @@ h2 {
   position: absolute;
   z-index: 4;
   margin-left: -20vw;
-  width: 50vw;
+  width: 40vw;
   font-size: 30px;
   transform: rotate(3deg);
 }
@@ -67,6 +67,7 @@ h5 {
 }
 
 .linkContainer {
+  height: 80vh;
   z-index: 3;
   position: absolute;
   margin-left: 25vw;
