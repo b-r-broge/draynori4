@@ -3,6 +3,7 @@
   -moz-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  mix-blend-mode: multiply;
 }
 
 body {
@@ -107,9 +108,34 @@ a:hover {
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: flex-start;
+
+}
+
+h4 {
+  position: absolute;
+  z-index: 3;
+  margin-top: 25vh;
+}
+
+input {
+  font-size: 30px;
+  font-weight: bold;
+  border: black solid 3px;
+  cursor: pointer;
+  position: absolute;
+  margin-left: 25vw;
+  margin-top: 2vh;
+}
+
+input:hover {
+  transform: scale(1.3);
 }
 
 textarea {
-  width: 40vw;
-  height: 30vh;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: sans-serif;
+  width: 35vw;
+  height: 45vh;
+  border: black dashed 4px;
 }

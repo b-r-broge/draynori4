@@ -4,6 +4,7 @@
   -moz-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  mix-blend-mode: multiply;
 }
 
 body {
