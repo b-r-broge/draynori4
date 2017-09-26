@@ -12,6 +12,7 @@ const page86Schema = new Schema({
   option1: {
     type: String,
     // required: true,
+    
   },
   option2: {
     type: String,
