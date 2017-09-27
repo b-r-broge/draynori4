@@ -162,6 +162,14 @@ app.get('/thanks', function(req, res) {
 
 //==========================//
 
+//====RENDER THANKS PAGE===//
+
+app.get('/page0', function(req, res) {
+  res.render('page0')
+});
+
+//==========================//
+
 //====RENDER PAGE 1===//
 
 app.get('/page1', function(req, res) {
