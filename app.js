@@ -1,4 +1,5 @@
 //=====MODELS======//
+const Ending = require('./models/endings.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -166,6 +167,30 @@ app.get('/thanks', function(req, res) {
 
 app.get('/page0', function(req, res) {
   res.render('page0')
+});
+
+//==========================//
+
+//====RENDER ENDINGS===//
+
+app.get('/endings', function(req, res) {
+  Ending.find({}).then(function (ending)  {
+    res.json(ending);
+  });
+});
+
+//==========================//
+
+//====POST ENDINGS===//
+
+app.post('/endings', function(req, res) {
+  Ending.create({
+    beginning: req.body.beginning,
+    text: req.body.text,
+    end: req.body.end,
+  }).then(endings => {
+  res.json(endings)
+});
 });
 
 //==========================//
@@ -882,12 +907,15 @@ app.post('/page26', function(req, res) {
 //====RENDER page27 ===//
 
 app.get('/page27', function(req, res) {
-  Page27.find({}).then(page27 => {
-    res.render('page27', {
-      page27: page27,
+  Page27.find({}).then(function(page27) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page27', {
+        page27: page27,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -909,12 +937,15 @@ app.post('/page27', function(req, res) {
 //====RENDER page28 ===//
 
 app.get('/page28', function(req, res) {
-  Page28.find({}).then(page28 => {
-    res.render('page28', {
-      page28: page28,
+  Page28.find({}).then(function(page28) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page28', {
+        page28: page28,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -936,12 +967,15 @@ app.post('/page28', function(req, res) {
 //====RENDER page29 ===//
 
 app.get('/page29', function(req, res) {
-  Page29.find({}).then(page29 => {
-    res.render('page29', {
-      page29: page29,
+  Page29.find({}).then(function(page29) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page29', {
+        page29: page29,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -963,12 +997,15 @@ app.post('/page29', function(req, res) {
 //====RENDER page30 ===//
 
 app.get('/page30', function(req, res) {
-  Page30.find({}).then(page30 => {
-    res.render('page30', {
-      page30: page30,
+  Page30.find({}).then(function(page30) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page30', {
+        page30: page30,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -990,12 +1027,15 @@ app.post('/page30', function(req, res) {
 //====RENDER page31 ===//
 
 app.get('/page31', function(req, res) {
-  Page31.find({}).then(page31 => {
-    res.render('page31', {
-      page31: page31,
+  Page31.find({}).then(function(page31) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page31', {
+        page31: page31,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1017,12 +1057,15 @@ app.post('/page31', function(req, res) {
 //====RENDER page32 ===//
 
 app.get('/page32', function(req, res) {
-  Page32.find({}).then(page32 => {
-    res.render('page32', {
-      page32: page32,
+  Page32.find({}).then(function(page32) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page32', {
+        page32: page32,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1044,12 +1087,15 @@ app.post('/page32', function(req, res) {
 //====RENDER page33 ===//
 
 app.get('/page33', function(req, res) {
-  Page33.find({}).then(page33 => {
-    res.render('page33', {
-      page33: page33,
+  Page33.find({}).then(function(page33) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page33', {
+        page33: page33,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1071,12 +1117,15 @@ app.post('/page33', function(req, res) {
 //====RENDER page34 ===//
 
 app.get('/page34', function(req, res) {
-  Page34.find({}).then(page34 => {
-    res.render('page34', {
-      page34: page34,
+  Page34.find({}).then(function(page34) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page34', {
+        page34: page34,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1098,12 +1147,15 @@ app.post('/page34', function(req, res) {
 //====RENDER page35 ===//
 
 app.get('/page35', function(req, res) {
-  Page35.find({}).then(page35 => {
-    res.render('page35', {
-      page35: page35,
+  Page35.find({}).then(function(page35) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page35', {
+        page35: page35,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1125,12 +1177,15 @@ app.post('/page35', function(req, res) {
 //====RENDER page36 ===//
 
 app.get('/page36', function(req, res) {
-  Page36.find({}).then(page36 => {
-    res.render('page36', {
-      page36: page36,
+  Page36.find({}).then(function(page36) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page36', {
+        page36: page36,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1152,12 +1207,15 @@ app.post('/page36', function(req, res) {
 //====RENDER page37 ===//
 
 app.get('/page37', function(req, res) {
-  Page37.find({}).then(page37 => {
-    res.render('page37', {
-      page37: page37,
+  Page37.find({}).then(function(page37) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page37', {
+        page37: page37,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1179,12 +1237,15 @@ app.post('/page37', function(req, res) {
 //====RENDER page38 ===//
 
 app.get('/page38', function(req, res) {
-  Page38.find({}).then(page38 => {
-    res.render('page38', {
-      page38: page38,
+  Page38.find({}).then(function(page38) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page38', {
+        page38: page38,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1206,12 +1267,15 @@ app.post('/page38', function(req, res) {
 //====RENDER page39 ===//
 
 app.get('/page39', function(req, res) {
-  Page39.find({}).then(page39 => {
-    res.render('page39', {
-      page39: page39,
+  Page39.find({}).then(function(page39) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page39', {
+        page39: page39,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1233,12 +1297,15 @@ app.post('/page39', function(req, res) {
 //====RENDER page40 ===//
 
 app.get('/page40', function(req, res) {
-  Page40.find({}).then(page40 => {
-    res.render('page40', {
-      page40: page40,
+  Page40.find({}).then(function(page40) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page40', {
+        page40: page40,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1260,12 +1327,15 @@ app.post('/page40', function(req, res) {
 //====RENDER page41 ===//
 
 app.get('/page41', function(req, res) {
-  Page41.find({}).then(page41 => {
-    res.render('page41', {
-      page41: page41,
+  Page41.find({}).then(function(page41) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page41', {
+        page41: page41,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1287,12 +1357,15 @@ app.post('/page41', function(req, res) {
 //====RENDER page42 ===//
 
 app.get('/page42', function(req, res) {
-  Page42.find({}).then(page42 => {
-    res.render('page42', {
-      page42: page42,
+  Page42.find({}).then(function(page42) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page42', {
+        page42: page42,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1314,12 +1387,15 @@ app.post('/page42', function(req, res) {
 //====RENDER page43 ===//
 
 app.get('/page43', function(req, res) {
-  Page43.find({}).then(page43 => {
-    res.render('page43', {
-      page43: page43,
+  Page43.find({}).then(function(page43) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page43', {
+        page43: page43,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1341,12 +1417,15 @@ app.post('/page43', function(req, res) {
 //====RENDER page44 ===//
 
 app.get('/page44', function(req, res) {
-  Page44.find({}).then(page44 => {
-    res.render('page44', {
-      page44: page44,
+  Page44.find({}).then(function(page44) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page44', {
+        page44: page44,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1368,12 +1447,15 @@ app.post('/page44', function(req, res) {
 //====RENDER page45 ===//
 
 app.get('/page45', function(req, res) {
-  Page45.find({}).then(page45 => {
-    res.render('page45', {
-      page45: page45,
+  Page45.find({}).then(function(page45) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page45', {
+        page45: page45,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1395,12 +1477,15 @@ app.post('/page45', function(req, res) {
 //====RENDER page46 ===//
 
 app.get('/page46', function(req, res) {
-  Page46.find({}).then(page46 => {
-    res.render('page46', {
-      page46: page46,
+  Page46.find({}).then(function(page46) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page46', {
+        page46: page46,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1422,12 +1507,15 @@ app.post('/page46', function(req, res) {
 //====RENDER page47 ===//
 
 app.get('/page47', function(req, res) {
-  Page47.find({}).then(page47 => {
-    res.render('page47', {
-      page47: page47,
+  Page47.find({}).then(function(page47) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page47', {
+        page47: page47,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1449,12 +1537,15 @@ app.post('/page47', function(req, res) {
 //====RENDER page48 ===//
 
 app.get('/page48', function(req, res) {
-  Page48.find({}).then(page48 => {
-    res.render('page48', {
-      page48: page48,
+  Page48.find({}).then(function(page48) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page48', {
+        page48: page48,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1476,12 +1567,15 @@ app.post('/page48', function(req, res) {
 //====RENDER page49 ===//
 
 app.get('/page49', function(req, res) {
-  Page49.find({}).then(page49 => {
-    res.render('page49', {
-      page49: page49,
+  Page49.find({}).then(function(page49) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page49', {
+        page49: page49,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1503,12 +1597,15 @@ app.post('/page49', function(req, res) {
 //====RENDER page50 ===//
 
 app.get('/page50', function(req, res) {
-  Page50.find({}).then(page50 => {
-    res.render('page50', {
-      page50: page50,
+  Page50.find({}).then(function(page50) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page50', {
+        page50: page50,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1530,12 +1627,15 @@ app.post('/page50', function(req, res) {
 //====RENDER page51 ===//
 
 app.get('/page51', function(req, res) {
-  Page51.find({}).then(page51 => {
-    res.render('page51', {
-      page51: page51,
+  Page51.find({}).then(function(page51) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page51', {
+        page51: page51,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1557,12 +1657,15 @@ app.post('/page51', function(req, res) {
 //====RENDER page52 ===//
 
 app.get('/page52', function(req, res) {
-  Page52.find({}).then(page52 => {
-    res.render('page52', {
-      page52: page52,
+  Page52.find({}).then(function(page52) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page52', {
+        page52: page52,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1584,12 +1687,15 @@ app.post('/page52', function(req, res) {
 //====RENDER page53 ===//
 
 app.get('/page53', function(req, res) {
-  Page53.find({}).then(page53 => {
-    res.render('page53', {
-      page53: page53,
+  Page53.find({}).then(function(page53) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page53', {
+        page53: page53,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1611,12 +1717,15 @@ app.post('/page53', function(req, res) {
 //====RENDER page54 ===//
 
 app.get('/page54', function(req, res) {
-  Page54.find({}).then(page54 => {
-    res.render('page54', {
-      page54: page54,
+  Page54.find({}).then(function(page54) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page54', {
+        page54: page54,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1638,12 +1747,15 @@ app.post('/page54', function(req, res) {
 //====RENDER page55 ===//
 
 app.get('/page55', function(req, res) {
-  Page55.find({}).then(page55 => {
-    res.render('page55', {
-      page55: page55,
+  Page55.find({}).then(function(page55) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page55', {
+        page55: page55,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1665,12 +1777,15 @@ app.post('/page55', function(req, res) {
 //====RENDER page56 ===//
 
 app.get('/page56', function(req, res) {
-  Page56.find({}).then(page56 => {
-    res.render('page56', {
-      page56: page56,
+  Page56.find({}).then(function(page56) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page56', {
+        page56: page56,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1692,12 +1807,15 @@ app.post('/page56', function(req, res) {
 //====RENDER page57 ===//
 
 app.get('/page57', function(req, res) {
-  Page57.find({}).then(page57 => {
-    res.render('page57', {
-      page57: page57,
+  Page57.find({}).then(function(page57) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page57', {
+        page57: page57,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1719,12 +1837,15 @@ app.post('/page57', function(req, res) {
 //====RENDER page58 ===//
 
 app.get('/page58', function(req, res) {
-  Page58.find({}).then(page58 => {
-    res.render('page58', {
-      page58: page58,
+  Page58.find({}).then(function(page58) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page58', {
+        page58: page58,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1746,12 +1867,15 @@ app.post('/page58', function(req, res) {
 //====RENDER page59 ===//
 
 app.get('/page59', function(req, res) {
-  Page59.find({}).then(page59 => {
-    res.render('page59', {
-      page59: page59,
+  Page59.find({}).then(function(page59) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page59', {
+        page59: page59,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1773,12 +1897,15 @@ app.post('/page59', function(req, res) {
 //====RENDER page60 ===//
 
 app.get('/page60', function(req, res) {
-  Page60.find({}).then(page60 => {
-    res.render('page60', {
-      page60: page60,
+  Page60.find({}).then(function(page60) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page60', {
+        page60: page60,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1800,12 +1927,15 @@ app.post('/page60', function(req, res) {
 //====RENDER page61 ===//
 
 app.get('/page61', function(req, res) {
-  Page61.find({}).then(page61 => {
-    res.render('page61', {
-      page61: page61,
+  Page61.find({}).then(function(page61) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page61', {
+        page61: page61,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1827,12 +1957,15 @@ app.post('/page61', function(req, res) {
 //====RENDER page62 ===//
 
 app.get('/page62', function(req, res) {
-  Page62.find({}).then(page62 => {
-    res.render('page62', {
-      page62: page62,
+  Page62.find({}).then(function(page62) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page62', {
+        page62: page62,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1854,12 +1987,15 @@ app.post('/page62', function(req, res) {
 //====RENDER page63 ===//
 
 app.get('/page63', function(req, res) {
-  Page63.find({}).then(page63 => {
-    res.render('page63', {
-      page63: page63,
+  Page63.find({}).then(function(page63) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page63', {
+        page63: page63,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1881,12 +2017,15 @@ app.post('/page63', function(req, res) {
 //====RENDER page64 ===//
 
 app.get('/page64', function(req, res) {
-  Page64.find({}).then(page64 => {
-    res.render('page64', {
-      page64: page64,
+  Page64.find({}).then(function(page64) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page64', {
+        page64: page64,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1908,12 +2047,15 @@ app.post('/page64', function(req, res) {
 //====RENDER page65 ===//
 
 app.get('/page65', function(req, res) {
-  Page65.find({}).then(page65 => {
-    res.render('page65', {
-      page65: page65,
+  Page65.find({}).then(function(page65) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page65', {
+        page65: page65,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1935,12 +2077,15 @@ app.post('/page65', function(req, res) {
 //====RENDER page66 ===//
 
 app.get('/page66', function(req, res) {
-  Page66.find({}).then(page66 => {
-    res.render('page66', {
-      page66: page66,
+  Page66.find({}).then(function(page66) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page66', {
+        page66: page66,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1962,12 +2107,15 @@ app.post('/page66', function(req, res) {
 //====RENDER page67 ===//
 
 app.get('/page67', function(req, res) {
-  Page67.find({}).then(page67 => {
-    res.render('page67', {
-      page67: page67,
+  Page67.find({}).then(function(page67) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page67', {
+        page67: page67,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -1989,12 +2137,15 @@ app.post('/page67', function(req, res) {
 //====RENDER page68 ===//
 
 app.get('/page68', function(req, res) {
-  Page68.find({}).then(page68 => {
-    res.render('page68', {
-      page68: page68,
+  Page68.find({}).then(function(page68) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page68', {
+        page68: page68,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2016,12 +2167,15 @@ app.post('/page68', function(req, res) {
 //====RENDER page69 ===//
 
 app.get('/page69', function(req, res) {
-  Page69.find({}).then(page69 => {
-    res.render('page69', {
-      page69: page69,
+  Page69.find({}).then(function(page69) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page69', {
+        page69: page69,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2043,12 +2197,15 @@ app.post('/page69', function(req, res) {
 //====RENDER page70 ===//
 
 app.get('/page70', function(req, res) {
-  Page70.find({}).then(page70 => {
-    res.render('page70', {
-      page70: page70,
+  Page70.find({}).then(function(page70) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page70', {
+        page70: page70,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2070,12 +2227,15 @@ app.post('/page70', function(req, res) {
 //====RENDER page71 ===//
 
 app.get('/page71', function(req, res) {
-  Page71.find({}).then(page71 => {
-    res.render('page71', {
-      page71: page71,
+  Page71.find({}).then(function(page71) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page71', {
+        page71: page71,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2097,12 +2257,15 @@ app.post('/page71', function(req, res) {
 //====RENDER page72 ===//
 
 app.get('/page72', function(req, res) {
-  Page72.find({}).then(page72 => {
-    res.render('page72', {
-      page72: page72,
+  Page72.find({}).then(function(page72) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page72', {
+        page72: page72,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2124,12 +2287,15 @@ app.post('/page72', function(req, res) {
 //====RENDER page73 ===//
 
 app.get('/page73', function(req, res) {
-  Page73.find({}).then(page73 => {
-    res.render('page73', {
-      page73: page73,
+  Page73.find({}).then(function(page73) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page73', {
+        page73: page73,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2151,12 +2317,15 @@ app.post('/page73', function(req, res) {
 //====RENDER page74 ===//
 
 app.get('/page74', function(req, res) {
-  Page74.find({}).then(page74 => {
-    res.render('page74', {
-      page74: page74,
+  Page74.find({}).then(function(page74) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page74', {
+        page74: page74,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2178,12 +2347,15 @@ app.post('/page74', function(req, res) {
 //====RENDER page75 ===//
 
 app.get('/page75', function(req, res) {
-  Page75.find({}).then(page75 => {
-    res.render('page75', {
-      page75: page75,
+  Page75.find({}).then(function(page75) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page75', {
+        page75: page75,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2205,12 +2377,15 @@ app.post('/page75', function(req, res) {
 //====RENDER page76 ===//
 
 app.get('/page76', function(req, res) {
-  Page76.find({}).then(page76 => {
-    res.render('page76', {
-      page76: page76,
+  Page76.find({}).then(function(page76) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page76', {
+        page76: page76,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2232,12 +2407,15 @@ app.post('/page76', function(req, res) {
 //====RENDER page77 ===//
 
 app.get('/page77', function(req, res) {
-  Page77.find({}).then(page77 => {
-    res.render('page77', {
-      page77: page77,
+  Page77.find({}).then(function(page77) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page77', {
+        page77: page77,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2259,12 +2437,15 @@ app.post('/page77', function(req, res) {
 //====RENDER page78 ===//
 
 app.get('/page78', function(req, res) {
-  Page78.find({}).then(page78 => {
-    res.render('page78', {
-      page78: page78,
+  Page78.find({}).then(function(page78) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page78', {
+        page78: page78,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2286,12 +2467,15 @@ app.post('/page78', function(req, res) {
 //====RENDER page79 ===//
 
 app.get('/page79', function(req, res) {
-  Page79.find({}).then(page79 => {
-    res.render('page79', {
-      page79: page79,
+  Page79.find({}).then(function(page79) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page79', {
+        page79: page79,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2313,12 +2497,15 @@ app.post('/page79', function(req, res) {
 //====RENDER page80 ===//
 
 app.get('/page80', function(req, res) {
-  Page80.find({}).then(page80 => {
-    res.render('page80', {
-      page80: page80,
+  Page80.find({}).then(function(page80) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page80', {
+        page80: page80,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2340,12 +2527,15 @@ app.post('/page80', function(req, res) {
 //====RENDER page81 ===//
 
 app.get('/page81', function(req, res) {
-  Page81.find({}).then(page81 => {
-    res.render('page81', {
-      page81: page81,
+  Page81.find({}).then(function(page81) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page81', {
+        page81: page81,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2367,12 +2557,15 @@ app.post('/page81', function(req, res) {
 //====RENDER page82 ===//
 
 app.get('/page82', function(req, res) {
-  Page82.find({}).then(page82 => {
-    res.render('page82', {
-      page82: page82,
+  Page82.find({}).then(function(page82) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page82', {
+        page82: page82,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2394,12 +2587,15 @@ app.post('/page82', function(req, res) {
 //====RENDER page83 ===//
 
 app.get('/page83', function(req, res) {
-  Page83.find({}).then(page83 => {
-    res.render('page83', {
-      page83: page83,
+  Page83.find({}).then(function(page83) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page83', {
+        page83: page83,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2421,12 +2617,15 @@ app.post('/page83', function(req, res) {
 //====RENDER page84 ===//
 
 app.get('/page84', function(req, res) {
-  Page84.find({}).then(page84 => {
-    res.render('page84', {
-      page84: page84,
+  Page84.find({}).then(function(page84) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page84', {
+        page84: page84,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2448,12 +2647,15 @@ app.post('/page84', function(req, res) {
 //====RENDER page85 ===//
 
 app.get('/page85', function(req, res) {
-  Page85.find({}).then(page85 => {
-    res.render('page85', {
-      page85: page85,
+  Page85.find({}).then(function(page85) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page85', {
+        page85: page85,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 
@@ -2475,12 +2677,15 @@ app.post('/page85', function(req, res) {
 //====RENDER page86 ===//
 
 app.get('/page86', function(req, res) {
-  Page86.find({}).then(page86 => {
-    res.render('page86', {
-      page86: page86,
+  Page86.find({}).then(function(page86) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page86', {
+        page86: page86,
+        endings: endings,
+      })
     })
-  });
-});
+  })
+})
 
 //==========================//
 

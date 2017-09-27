@@ -11,7 +11,7 @@ const page39Schema = new Schema({
   },
   option1: {
     type: String,
-    // required: true,
+    required: true,
   },
   option2: {
     type: String,

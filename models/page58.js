@@ -7,7 +7,7 @@ const page58Schema = new Schema({
 
   text: {
     type: String,
-    required: true,
+    // required: true,
   },
   option1: {
     type: String,

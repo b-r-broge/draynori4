@@ -46,6 +46,41 @@ h2 {
   transform: rotate(3deg);
 }
 
+.beg {
+  font-family: 'Frijole', cursive;
+  position: absolute;
+  font-size: 40px;
+  margin-top: -30vh;
+  margin-left: -5vw;
+  transform: rotate(-6deg);
+}
+
+.txt {
+  font-family: 'Black Ops One', cursive;
+}
+
+.end {
+  font-family: 'Fontdiner Swanky', cursive;
+  position: absolute;
+  margin-top: 30vh;
+  margin-left: 0vw;
+  transform: rotate(-4deg);
+}
+
+.strt {
+  position: absolute;
+  margin-left: 15vw;
+  margin-top: 40vh;
+}
+
+.new {
+  font-size: 17px;
+  z-index: 10;
+  position: absolute;
+  margin-top: 43vh;
+  margin-left: 15vw;
+}
+
 p {
   font-size: 35px;
   transform: rotate(8deg);

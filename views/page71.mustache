@@ -9,22 +9,15 @@
   <body>
     <div class="bodywrapper">
 
-      <h3>page 71</h3>
-    <h2>
-      Oops!  It looks like this part of the story hasn't been finished.  If you'd like, you can write the next part!
-    </h2>
-    <h4>
-      Hit the back button if you can't remember what just happened.  Be creative!
-    </h4>
-    <div class="linkContainer">
-
-      <form action="/page71" method="post">
-
-        <textarea type="text" name="text"></textarea>
-        <input type="submit" />
-      </form>
-
-  </div>
+      <h2>
+          {{#endings}}
+            <h2 class="beg">{{beginning}}</h2>
+            <h2 class="txt">{{text}}</h2>
+            <h2 class="end">{{end}}</h2>
+            <h2 class="strt">Start a new game?</h2>
+            <div class="new"><a href="/page0">Yes</a> <span>No</span></div>
+          {{/endings}}
+      </h2>
 
 
   </div>
