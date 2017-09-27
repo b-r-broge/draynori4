@@ -86,6 +86,16 @@ const Page83 = require('./models/page83.js');
 const Page84 = require('./models/page84.js');
 const Page85 = require('./models/page85.js');
 const Page86 = require('./models/page86.js');
+const Page87 = require('./models/page87.js');
+const Page88 = require('./models/page88.js');
+const Page89 = require('./models/page89.js');
+const Page90 = require('./models/page90.js');
+const Page91 = require('./models/page91.js');
+const Page92 = require('./models/page92.js');
+const Page93 = require('./models/page93.js');
+const Page94 = require('./models/page94.js');
+const Page95 = require('./models/page95.js');
+const Page96 = require('./models/page96.js');
 
 //=================//
 
@@ -2697,6 +2707,278 @@ app.post('/page86', function(req, res) {
     option1: req.body.option1,
     option2: req.body.option2,
     option3: req.body.option3,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page87 ===//
+
+app.get('/page87', function(req, res) {
+  Page87.find({}).then(function(page87) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page87', {
+        page87: page87,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page87 ===//
+
+app.post('/page87', function(req, res) {
+  Page87.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page88 ===//
+
+app.get('/page88', function(req, res) {
+  Page88.find({}).then(function(page88) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page88', {
+        page88: page88,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page88 ===//
+
+app.post('/page88', function(req, res) {
+  Page88.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page89 ===//
+
+app.get('/page89', function(req, res) {
+  Page89.find({}).then(function(page89) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page89', {
+        page89: page89,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page89 ===//
+
+app.post('/page89', function(req, res) {
+  Page89.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page90 ===//
+
+app.get('/page90', function(req, res) {
+  Page90.find({}).then(function(page90) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page90', {
+        page90: page90,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page90 ===//
+
+app.post('/page90', function(req, res) {
+  Page90.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page91 ===//
+
+app.get('/page91', function(req, res) {
+  Page91.find({}).then(function(page91) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page91', {
+        page91: page91,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page91 ===//
+
+app.post('/page91', function(req, res) {
+  Page91.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page92 ===//
+
+app.get('/page92', function(req, res) {
+  Page92.find({}).then(function(page92) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page92', {
+        page92: page92,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page92 ===//
+
+app.post('/page92', function(req, res) {
+  Page92.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page93 ===//
+
+app.get('/page93', function(req, res) {
+  Page93.find({}).then(function(page93) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page93', {
+        page93: page93,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page93 ===//
+
+app.post('/page93', function(req, res) {
+  Page93.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page94 ===//
+
+app.get('/page94', function(req, res) {
+  Page94.find({}).then(function(page94) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page94', {
+        page94: page94,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page94 ===//
+
+app.post('/page94', function(req, res) {
+  Page94.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page95 ===//
+
+app.get('/page95', function(req, res) {
+  Page95.find({}).then(function(page95) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page95', {
+        page95: page95,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page95 ===//
+
+app.post('/page95', function(req, res) {
+  Page95.create({
+    text: req.body.text,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page96 ===//
+
+app.get('/page96', function(req, res) {
+  Page96.find({}).then(function(page96) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page96', {
+        page96: page96,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page96 ===//
+
+app.post('/page96', function(req, res) {
+  Page96.create({
+    text: req.body.text,
   }).then(page => {
   res.redirect('/thanks')
 });

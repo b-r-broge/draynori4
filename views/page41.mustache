@@ -9,15 +9,17 @@
   <body>
     <div class="bodywrapper">
 
-      <h2>
-          {{#endings}}
-            <h2 class="beg">{{beginning}}</h2>
-            <h2 class="txt">{{text}}</h2>
-            <h2 class="end">{{end}}</h2>
-            <h2 class="strt">Start a new game?</h2>
-            <div class="new"><a href="/page0">Yes</a> <span>No</span></div>
-          {{/endings}}
-      </h2>
+      {{#page41}}
+      <h3>page 41</h3>
+    <h2>
+      {{text}}
+    </h2>
+    <div class="linkContainer">
+    <a href="/page87"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 87}</h5></a>
+    <a href="/page88"><div class="plink"><p>else if</p> <h6>{{option2}}</h6></div> <h5>{go to page 88}</h5></a>
+  </div>
+
+    {{/page41}}
 
 
   </div>

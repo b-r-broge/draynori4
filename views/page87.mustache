@@ -9,17 +9,17 @@
   <body>
     <div class="bodywrapper">
 
-      {{#page76}}
-      <h3>page 76</h3>
-    <h2>
-      {{text}}
-    </h2>
-    <div class="linkContainer">
-    <a href="/page89"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 89}</h5></a>
-    <a href="/page90"><div class="plink"><p>else</p> <h6>{{option2}}</h6></div> <h5>{go to page 90}</h5></a>
-  </div>
+      <h2>
+          {{#endings}}
+            <h2 class="beg">{{beginning}}</h2>
+            <h2 class="txt">{{text}}</h2>
+            <h2 class="end">{{end}}</h2>
+            <h2 class="strt">Start a new game?</h2>
+            <div class="new"><a href="/page0">Yes</a> <span>No</span></div>
+          {{/endings}}
+      </h2>
 
-    {{/page76}}
+
   </div>
   </body>
 </html>
