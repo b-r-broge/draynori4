@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>the else if game</title>
+    <link rel="stylesheet" href="/pageTown.css">
+  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Cherry+Cream+Soda|Fontdiner+Swanky|Frijole" rel="stylesheet">
+  </head>
+  <body>
+    <div class="bodywrapper">
+
+      {{#page100}}
+      <h3>page 100</h3>
+    <h2>
+      {{text}}
+    </h2>
+    <div class="linkContainer">
+    <a href="/page101">
+      <div class="JSONcontainer">
+        <div class="top">{{option1}}: {</div>
+        <div class="middle">time: 10 minutes,</div>
+        <div class="middle2">to_page: 101,</div>
+        <div class="bottom">},</div>
+      </div>
+    </a>
+    <a href="/page108">
+      <div class="JSONcontainer">
+        <div class="top">{{option2}}: {</div>
+        <div class="middle">time: 5 minutes,</div>
+        <div class="middle2">to_page: 108,</div>
+        <div class="bottom">},</div>
+      </div>
+    </a>
+    <a href="/page115">
+      <div class="JSONcontainer">
+        <div class="top">{{option3}}: {</div>
+        <div class="middle">time: 15 minutes,</div>
+        <div class="middle2">to_page: 115,</div>
+        <div class="bottom">},</div>
+      </div>
+    </a>
+
+
+  </div>
+
+    {{/page100}}
+
+  </div>
+  </body>
+</html>
