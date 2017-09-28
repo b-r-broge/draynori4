@@ -16,7 +16,13 @@ const page116Schema = new Schema({
   },
   option3: {
     type: String,
-  }
+  },
+  option4: {
+    type: String,
+  },
+  option5: {
+    type: String,
+  },
 
 })
 

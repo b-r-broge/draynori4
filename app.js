@@ -1,6 +1,7 @@
 //=====MODELS======//
 const Ending = require('./models/endings.js');
 const EndingTown = require('./models/endingTowns.js');
+const EndingPig = require('./models/endingPigs.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -226,6 +227,54 @@ app.post('/endings', function(req, res) {
     end: req.body.end,
   }).then(endings => {
   res.json(endings)
+});
+});
+
+//==========================//
+
+//====RENDER TOWN ENDINGS===//
+
+app.get('/endingTowns', function(req, res) {
+  EndingTown.find({}).then(function (endingtown)  {
+    res.json(endingtown);
+  });
+});
+
+//==========================//
+
+//====POST TOWN ENDINGS===//
+
+app.post('/endingTowns', function(req, res) {
+  EndingTown.create({
+    beginning: req.body.beginning,
+    text: req.body.text,
+    end: req.body.end,
+  }).then(endingtowns => {
+  res.json(endingtowns)
+});
+});
+
+//==========================//
+
+//====RENDER PIG ENDINGS===//
+
+app.get('/endingPigs', function(req, res) {
+  EndingPig.find({}).then(function (endingpig)  {
+    res.json(endingpig);
+  });
+});
+
+//==========================//
+
+//====POST PIG ENDINGS===//
+
+app.post('/endingPigs', function(req, res) {
+  EndingPig.create({
+    beginning: req.body.beginning,
+    text: req.body.text,
+    end: req.body.end,
+  }).then(endingpigs => {
+  res.json(endingpigs)
 });
 });
 
@@ -3110,10 +3159,10 @@ app.post('/page102', function(req, res) {
 
 app.get('/page103', function(req, res) {
   Page103.find({}).then(function(page103) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page103', {
         page103: page103,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3140,10 +3189,10 @@ app.post('/page103', function(req, res) {
 
 app.get('/page104', function(req, res) {
   Page104.find({}).then(function(page104) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page104', {
         page104: page104,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3170,10 +3219,10 @@ app.post('/page104', function(req, res) {
 
 app.get('/page105', function(req, res) {
   Page105.find({}).then(function(page105) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page105', {
         page105: page105,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3200,10 +3249,10 @@ app.post('/page105', function(req, res) {
 
 app.get('/page106', function(req, res) {
   Page106.find({}).then(function(page106) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page106', {
         page106: page106,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3230,10 +3279,10 @@ app.post('/page106', function(req, res) {
 
 app.get('/page107', function(req, res) {
   Page107.find({}).then(function(page107) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page107', {
         page107: page107,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3260,10 +3309,10 @@ app.post('/page107', function(req, res) {
 
 app.get('/page108', function(req, res) {
   Page108.find({}).then(function(page108) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page108', {
         page108: page108,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3290,10 +3339,10 @@ app.post('/page108', function(req, res) {
 
 app.get('/page109', function(req, res) {
   Page109.find({}).then(function(page109) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page109', {
         page109: page109,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3320,10 +3369,10 @@ app.post('/page109', function(req, res) {
 
 app.get('/page110', function(req, res) {
   Page110.find({}).then(function(page110) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page110', {
         page110: page110,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3350,10 +3399,10 @@ app.post('/page110', function(req, res) {
 
 app.get('/page111', function(req, res) {
   Page111.find({}).then(function(page111) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page111', {
         page111: page111,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3380,10 +3429,10 @@ app.post('/page111', function(req, res) {
 
 app.get('/page112', function(req, res) {
   Page112.find({}).then(function(page112) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page112', {
         page112: page112,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3410,10 +3459,10 @@ app.post('/page112', function(req, res) {
 
 app.get('/page113', function(req, res) {
   Page113.find({}).then(function(page113) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page113', {
         page113: page113,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3440,10 +3489,10 @@ app.post('/page113', function(req, res) {
 
 app.get('/page114', function(req, res) {
   Page114.find({}).then(function(page114) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page114', {
         page114: page114,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3470,10 +3519,10 @@ app.post('/page114', function(req, res) {
 
 app.get('/page115', function(req, res) {
   Page115.find({}).then(function(page115) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page115', {
         page115: page115,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3500,10 +3549,10 @@ app.post('/page115', function(req, res) {
 
 app.get('/page116', function(req, res) {
   Page116.find({}).then(function(page116) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page116', {
         page116: page116,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3519,6 +3568,8 @@ app.post('/page116', function(req, res) {
     option1: req.body.option1,
     option2: req.body.option2,
     option3: req.body.option3,
+    option3: req.body.option4,
+    option3: req.body.option5,
   }).then(page => {
   res.redirect('/thanks')
 });
@@ -3530,10 +3581,10 @@ app.post('/page116', function(req, res) {
 
 app.get('/page117', function(req, res) {
   Page117.find({}).then(function(page117) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page117', {
         page117: page117,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3560,10 +3611,10 @@ app.post('/page117', function(req, res) {
 
 app.get('/page118', function(req, res) {
   Page118.find({}).then(function(page118) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page118', {
         page118: page118,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3590,10 +3641,10 @@ app.post('/page118', function(req, res) {
 
 app.get('/page119', function(req, res) {
   Page119.find({}).then(function(page119) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page119', {
         page119: page119,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3620,10 +3671,10 @@ app.post('/page119', function(req, res) {
 
 app.get('/page120', function(req, res) {
   Page120.find({}).then(function(page120) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endingtowns){
       res.render('page120', {
         page120: page120,
-        endings: endings,
+        endingtowns: endingtowns,
       })
     })
   })
@@ -3650,7 +3701,7 @@ app.post('/page120', function(req, res) {
 
 app.get('/page121', function(req, res) {
   Page121.find({}).then(function(page121) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    Ending.aggregate().sample(1).then(function(endings){
       res.render('page121', {
         page121: page121,
         endings: endings,
@@ -3680,7 +3731,7 @@ app.post('/page121', function(req, res) {
 
 app.get('/page122', function(req, res) {
   Page122.find({}).then(function(page122) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    Ending.aggregate().sample(1).then(function(endings){
       res.render('page122', {
         page122: page122,
         endings: endings,
@@ -3710,7 +3761,7 @@ app.post('/page122', function(req, res) {
 
 app.get('/page123', function(req, res) {
   Page123.find({}).then(function(page123) {
-    EndingTown.aggregate().sample(1).then(function(endings){
+    Ending.aggregate().sample(1).then(function(endings){
       res.render('page123', {
         page123: page123,
         endings: endings,
