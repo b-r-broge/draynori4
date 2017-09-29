@@ -122,6 +122,7 @@ const Page120 = require('./models/page120.js');
 const Page121 = require('./models/page121.js');
 const Page122 = require('./models/page122.js');
 const Page123 = require('./models/page123.js');
+const Page124 = require('./models/page124.js');
 
 
 //=================//
@@ -3780,6 +3781,38 @@ app.post('/page123', function(req, res) {
     option1: req.body.option1,
     option2: req.body.option2,
     option3: req.body.option3,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page124 ===//
+
+app.get('/page124', function(req, res) {
+  Page124.find({}).then(function(page124) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page124', {
+        page124: page124,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page124 ===//
+
+app.post('/page124', function(req, res) {
+  Page124.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
   }).then(page => {
   res.redirect('/thanks')
 });
