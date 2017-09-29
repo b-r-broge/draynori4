@@ -152,6 +152,9 @@ const Page172 = require('./models/page172.js');
 const Page173 = require('./models/page173.js');
 const Page174 = require('./models/page174.js');
 const Page175 = require('./models/page175.js');
+const Page176 = require('./models/page176.js');
+const Page177 = require('./models/page177.js');
+const Page178 = require('./models/page178.js');
 
 //=================//
 
@@ -4747,6 +4750,102 @@ app.get('/page175', function(req, res) {
 
 app.post('/page175', function(req, res) {
   Page175.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page176 ===//
+
+app.get('/page176', function(req, res) {
+  Page176.find({}).then(function(page176) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page176', {
+        page176: page176,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page176 ===//
+
+app.post('/page176', function(req, res) {
+  Page176.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page177 ===//
+
+app.get('/page177', function(req, res) {
+  Page177.find({}).then(function(page177) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page177', {
+        page177: page177,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page177 ===//
+
+app.post('/page177', function(req, res) {
+  Page177.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page178 ===//
+
+app.get('/page178', function(req, res) {
+  Page178.find({}).then(function(page178) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page178', {
+        page178: page178,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page178 ===//
+
+app.post('/page178', function(req, res) {
+  Page178.create({
     text: req.body.text,
     option1: req.body.option1,
     option2: req.body.option2,
