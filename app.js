@@ -1,6 +1,8 @@
 //=====MODELS======//
 const Ending = require('./models/endings.js');
 const EndingTown = require('./models/endingTowns.js');
+const EndingMine = require('./models/endingMines.js');
+const EndingMount = require('./models/endingMounts.js');
 const EndingPig = require('./models/endingPigs.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
@@ -39,7 +41,7 @@ const Page34 = require('./models/page34.js');
 const Page35 = require('./models/page35.js');
 const Page36 = require('./models/page36.js');
 const Page37 = require('./models/page37.js');
-const page38 = require('./models/page38.js');
+const Page38 = require('./models/page38.js');
 const Page39 = require('./models/page39.js');
 const Page40 = require('./models/page40.js');
 const Page41 = require('./models/page41.js');
@@ -123,7 +125,33 @@ const Page121 = require('./models/page121.js');
 const Page122 = require('./models/page122.js');
 const Page123 = require('./models/page123.js');
 const Page124 = require('./models/page124.js');
-
+const Page130 = require('./models/page130.js');
+const Page150 = require('./models/page150.js');
+const Page151 = require('./models/page151.js');
+const Page152 = require('./models/page152.js');
+const Page153 = require('./models/page153.js');
+const Page154 = require('./models/page154.js');
+const Page155 = require('./models/page155.js');
+const Page156 = require('./models/page156.js');
+const Page157 = require('./models/page157.js');
+const Page158 = require('./models/page158.js');
+const Page159 = require('./models/page159.js');
+const Page160 = require('./models/page160.js');
+const Page161 = require('./models/page161.js');
+const Page162 = require('./models/page162.js');
+const Page163 = require('./models/page163.js');
+const Page164 = require('./models/page164.js');
+const Page165 = require('./models/page165.js');
+const Page166 = require('./models/page166.js');
+const Page167 = require('./models/page167.js');
+const Page168 = require('./models/page168.js');
+const Page169 = require('./models/page169.js');
+const Page170 = require('./models/page170.js');
+const Page171 = require('./models/page171.js');
+const Page172 = require('./models/page172.js');
+const Page173 = require('./models/page173.js');
+const Page174 = require('./models/page174.js');
+const Page175 = require('./models/page175.js');
 
 //=================//
 
@@ -252,6 +280,54 @@ app.post('/endingTowns', function(req, res) {
     end: req.body.end,
   }).then(endingtowns => {
   res.json(endingtowns)
+});
+});
+
+//==========================//
+
+//====RENDER MINE ENDINGS===//
+
+app.get('/endingMines', function(req, res) {
+  EndingMine.find({}).then(function (endingmine)  {
+    res.json(endingmine);
+  });
+});
+
+//==========================//
+
+//====POST MINE ENDINGS===//
+
+app.post('/endingMines', function(req, res) {
+  EndingMine.create({
+    beginning: req.body.beginning,
+    text: req.body.text,
+    end: req.body.end,
+  }).then(endingmines => {
+  res.json(endingmines)
+});
+});
+
+//==========================//
+
+//====RENDER MOUNT ENDINGS===//
+
+app.get('/endingMounts', function(req, res) {
+  EndingMount.find({}).then(function (endingmount)  {
+    res.json(endingmount);
+  });
+});
+
+//==========================//
+
+//====POST MOUNT ENDINGS===//
+
+app.post('/endingMounts', function(req, res) {
+  EndingMount.create({
+    beginning: req.body.beginning,
+    text: req.body.text,
+    end: req.body.end,
+  }).then(endingmounts => {
+  res.json(endingmounts)
 });
 });
 
@@ -3807,6 +3883,870 @@ app.get('/page124', function(req, res) {
 
 app.post('/page124', function(req, res) {
   Page124.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page130 ===//
+
+app.get('/page130', function(req, res) {
+  Page130.find({}).then(function(page130) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page130', {
+        page130: page130,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page130 ===//
+
+app.post('/page130', function(req, res) {
+  Page130.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page150 ===//
+
+app.get('/page150', function(req, res) {
+  Page150.find({}).then(function(page150) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page150', {
+        page150: page150,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page150 ===//
+
+app.post('/page150', function(req, res) {
+  Page150.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page151 ===//
+
+app.get('/page151', function(req, res) {
+  Page151.find({}).then(function(page151) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page151', {
+        page151: page151,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page151 ===//
+
+app.post('/page151', function(req, res) {
+  Page151.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page152 ===//
+
+app.get('/page152', function(req, res) {
+  Page152.find({}).then(function(page152) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page152', {
+        page152: page152,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page152 ===//
+
+app.post('/page152', function(req, res) {
+  Page152.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page153 ===//
+
+app.get('/page153', function(req, res) {
+  Page153.find({}).then(function(page153) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page153', {
+        page153: page153,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page153 ===//
+
+app.post('/page153', function(req, res) {
+  Page153.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page154 ===//
+
+app.get('/page154', function(req, res) {
+  Page154.find({}).then(function(page154) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page154', {
+        page154: page154,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page154 ===//
+
+app.post('/page154', function(req, res) {
+  Page154.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page155 ===//
+
+app.get('/page155', function(req, res) {
+  Page155.find({}).then(function(page155) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page155', {
+        page155: page155,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page155 ===//
+
+app.post('/page155', function(req, res) {
+  Page155.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page156 ===//
+
+app.get('/page156', function(req, res) {
+  Page156.find({}).then(function(page156) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page156', {
+        page156: page156,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page156 ===//
+
+app.post('/page156', function(req, res) {
+  Page156.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page157 ===//
+
+app.get('/page157', function(req, res) {
+  Page157.find({}).then(function(page157) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page157', {
+        page157: page157,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page157 ===//
+
+app.post('/page157', function(req, res) {
+  Page157.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page158 ===//
+
+app.get('/page158', function(req, res) {
+  Page158.find({}).then(function(page158) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page158', {
+        page158: page158,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page158 ===//
+
+app.post('/page158', function(req, res) {
+  Page158.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page159 ===//
+
+app.get('/page159', function(req, res) {
+  Page159.find({}).then(function(page159) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page159', {
+        page159: page159,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page159 ===//
+
+app.post('/page159', function(req, res) {
+  Page159.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page160 ===//
+
+app.get('/page160', function(req, res) {
+  Page160.find({}).then(function(page160) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page160', {
+        page160: page160,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page160 ===//
+
+app.post('/page160', function(req, res) {
+  Page160.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page161 ===//
+
+app.get('/page161', function(req, res) {
+  Page161.find({}).then(function(page161) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page161', {
+        page161: page161,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page161 ===//
+
+app.post('/page161', function(req, res) {
+  Page161.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page162 ===//
+
+app.get('/page162', function(req, res) {
+  Page162.find({}).then(function(page162) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page162', {
+        page162: page162,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page162 ===//
+
+app.post('/page162', function(req, res) {
+  Page162.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page163 ===//
+
+app.get('/page163', function(req, res) {
+  Page163.find({}).then(function(page163) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page163', {
+        page163: page163,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page163 ===//
+
+app.post('/page163', function(req, res) {
+  Page163.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page164 ===//
+
+app.get('/page164', function(req, res) {
+  Page164.find({}).then(function(page164) {
+    EndingMine.aggregate().sample(1).then(function(endingmines){
+      res.render('page164', {
+        page164: page164,
+        endingmines: endingmines,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page164 ===//
+
+app.post('/page164', function(req, res) {
+  Page164.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page165 ===//
+
+app.get('/page165', function(req, res) {
+  Page165.find({}).then(function(page165) {
+    EndingMine.aggregate().sample(1).then(function(endingmines){
+      res.render('page165', {
+        page165: page165,
+        endingmines: endingmines,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page165 ===//
+
+app.post('/page165', function(req, res) {
+  Page165.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page166 ===//
+
+app.get('/page166', function(req, res) {
+  Page166.find({}).then(function(page166) {
+    EndingMine.aggregate().sample(1).then(function(endingmines){
+      res.render('page166', {
+        page166: page166,
+        endingmines: endingmines,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page166 ===//
+
+app.post('/page166', function(req, res) {
+  Page166.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page167 ===//
+
+app.get('/page167', function(req, res) {
+  Page167.find({}).then(function(page167) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page167', {
+        page167: page167,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page167 ===//
+
+app.post('/page167', function(req, res) {
+  Page167.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page168 ===//
+
+app.get('/page168', function(req, res) {
+  Page168.find({}).then(function(page168) {
+    EndingMine.aggregate().sample(1).then(function(endingmines){
+      res.render('page168', {
+        page168: page168,
+        endingmines: endingmines,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page168 ===//
+
+app.post('/page168', function(req, res) {
+  Page168.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page169 ===//
+
+app.get('/page169', function(req, res) {
+  Page169.find({}).then(function(page169) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page169', {
+        page169: page169,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page169 ===//
+
+app.post('/page169', function(req, res) {
+  Page169.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page170 ===//
+
+app.get('/page170', function(req, res) {
+  Page170.find({}).then(function(page170) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page170', {
+        page170: page170,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page170 ===//
+
+app.post('/page170', function(req, res) {
+  Page170.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page171 ===//
+
+app.get('/page171', function(req, res) {
+  Page171.find({}).then(function(page171) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page171', {
+        page171: page171,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page171 ===//
+
+app.post('/page171', function(req, res) {
+  Page171.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page172 ===//
+
+app.get('/page172', function(req, res) {
+  Page172.find({}).then(function(page172) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page172', {
+        page172: page172,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page172 ===//
+
+app.post('/page172', function(req, res) {
+  Page172.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page173 ===//
+
+app.get('/page173', function(req, res) {
+  Page173.find({}).then(function(page173) {
+    EndingMine.aggregate().sample(1).then(function(endingmines){
+      res.render('page173', {
+        page173: page173,
+        endingmines: endingmines,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page173 ===//
+
+app.post('/page173', function(req, res) {
+  Page173.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page174 ===//
+
+app.get('/page174', function(req, res) {
+  Page174.find({}).then(function(page174) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page174', {
+        page174: page174,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page174 ===//
+
+app.post('/page174', function(req, res) {
+  Page174.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page175 ===//
+
+app.get('/page175', function(req, res) {
+  Page175.find({}).then(function(page175) {
+    Ending.aggregate().sample(1).then(function(endings){
+      res.render('page175', {
+        page175: page175,
+        endings: endings,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page175 ===//
+
+app.post('/page175', function(req, res) {
+  Page175.create({
     text: req.body.text,
     option1: req.body.option1,
     option2: req.body.option2,
