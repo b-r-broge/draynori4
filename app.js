@@ -9,6 +9,8 @@ const Kuku = require('./models/locationKuku.js');
 const Mine= require('./models/locationMine.js');
 const Mount = require('./models/locationMount.js');
 const Snag = require('./models/locationSnag.js');
+const Spider = require('./models/locationSpider.js');
+const Croc = require('./models/locationCroc.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -386,6 +388,32 @@ app.post('/mine', function(req, res) {
 
 //==========================//
 
+//====CREATE NEW SPIDER===//
+
+app.post('/spider', function(req, res) {
+  Spider.create({
+    spider: req.body.spider,
+    user: req.session.username,
+  }).then(spiders => {
+  res.redirect('/page41')
+});
+});
+
+//==========================//
+
+//====CREATE NEW CROC===//
+
+app.post('/croc', function(req, res) {
+  Croc.create({
+    croc: req.body.croc,
+    user: req.session.username,
+  }).then(crocs => {
+  res.redirect('/page76')
+});
+});
+
+//==========================//
+
 //====RENDER THANKS PAGE===//
 
 app.get('/thanks', function(req, res) {
@@ -402,7 +430,8 @@ app.get('/map', function(req, res) {
       Snag.findOne({}).then(function(snags){
         Mount.findOne({}).then(function(mounts){
           Mine.findOne({}).then(function(mines){
-
+            Croc.findOne({}).then(function(crocs){
+              Spider.findOne({}).then(function(spiders){
 
       res.render('map', {
         users: users,
@@ -410,6 +439,10 @@ app.get('/map', function(req, res) {
         snags: snags,
         mounts: mounts,
         mines: mines,
+        crocs: crocs,
+        spiders: spiders,
+                });
+              });
             });
           });
         });

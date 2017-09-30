@@ -46,6 +46,10 @@ h3 {
   transform: scale(1.12);
 }
 
+.inputfield {
+  visibility: hidden;
+}
+
 .bodywrapper {
   display: flex;
   justify-content: center;
@@ -130,6 +134,42 @@ h5 {
   min-width: 700px;
 }
 
+.links {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: black;
+  display: flex;
+  flex-basis: 0.5;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 300px;
+  padding-left: 8px;
+  padding-right: 8px;
+  mix-blend-mode: multiply;
+}
+
+.submitbtn {
+  opacity: 0;
+  z-index: 11;
+  border: black 2px solid;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+.links:hover {
+  text-decoration: underline;
+  color: white;
+  transform: scale(1.15) rotate(6deg);
+  flex-grow: .5;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: multiply;
+}
+
 a {
   font-weight: bold;
   font-family: sans-serif;
@@ -160,7 +200,7 @@ a:hover {
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: flex-start;
-
+  cursor: pointer;
 }
 
 h4 {
@@ -172,7 +212,7 @@ h4 {
 input {
   font-size: 30px;
   font-weight: bold;
-  border: black solid 3px;
+  /*border: black solid 3px;*/
   cursor: pointer;
   position: absolute;
   margin-left: 25vw;

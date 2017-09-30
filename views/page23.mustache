@@ -15,9 +15,15 @@
     </h2>
     <div class="linkContainer">
     <a href="/page75"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 75}</h5></a>
-    <a href="/page76"><div class="plink"><p>else if</p> <h6>{{option2}}</h6></div> <h5>{go to page 76}</h5></a>
+    <form class="plink" action="/croc" method="post">
+      <input class="inputfield" type="text" value="Massive Crocodile" name="croc" />
+      <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <h5>{go to page 76}</h5></div>
+    </form>
     <a href="/page77"><div class="plink"><p>else</p> <h6>{{option3}}</h6></div> <h5>{go to page 77}</h5></a>
   </div>
+
+
+
 
     {{/page23}}
 

@@ -37,6 +37,15 @@ body {
   font-family: 'Frijole', cursive;
 }
 
+img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.kuku img {
+  width: 80px;
+}
+
 span {
   font-size: 45px;
   margin-left: 10px;
@@ -54,6 +63,10 @@ span {
   font-family: 'Frijole', cursive;
 }
 
+.snag img {
+  width: 80px;
+}
+
 .mine {
   display: flex;
   justify-content: center;
@@ -65,6 +78,10 @@ span {
   font-family: 'Frijole', cursive;
 }
 
+.mine img {
+  width: 80px;
+}
+
 .mount {
   display: flex;
   justify-content: center;
@@ -74,4 +91,38 @@ span {
   left: 200px;
   font-size: 25px;
   font-family: 'Frijole', cursive;
+}
+
+.mount img {
+  width: 80px;
+}
+
+.croc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 600px;
+  left: 700px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.croc img {
+  width: 75px;
+}
+
+.spider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 650px;
+  left: 520px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.spider img {
+  width: 50px;
 }
