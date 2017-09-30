@@ -453,15 +453,15 @@ app.get('/thanks', function(req, res) {
 //====RENDER MAP PAGE===//
 
 app.get('/map', function(req, res) {
-  User.find({username: req.session.username}).then(function(users){
-    Kuku.findOne({}).then(function(kukus){
-      Snag.findOne({}).then(function(snags){
-        Mount.findOne({}).then(function(mounts){
-          Mine.findOne({}).then(function(mines){
-            Croc.findOne({}).then(function(crocs){
-              Spider.findOne({}).then(function(spiders){
-                Bear.findOne({}).then(function(bears){
-                  Cave.findOne({}).then(function(caves){
+  User.find({user: req.session.username}).then(function(users){
+    Kuku.findOne({user: req.session.username}).then(function(kukus){
+      Snag.findOne({user: req.session.username}).then(function(snags){
+        Mount.findOne({user: req.session.username}).then(function(mounts){
+          Mine.findOne({user: req.session.username}).then(function(mines){
+            Croc.findOne({user: req.session.username}).then(function(crocs){
+              Spider.findOne({user: req.session.username}).then(function(spiders){
+                Bear.findOne({user: req.session.username}).then(function(bears){
+                  Cave.findOne({user: req.session.username}).then(function(caves){
 
       res.render('map', {
         users: users,
@@ -2953,6 +2953,7 @@ app.post('/page80', function(req, res) {
 app.get('/page81', function(req, res) {
   Page81.find({}).then(function(page81) {
     Ending.aggregate().sample(1).then(function(endings){
+      req.session.destroy()
       res.render('page81', {
         page81: page81,
         endings: endings,
