@@ -4,6 +4,11 @@ const EndingTown = require('./models/endingTowns.js');
 const EndingMine = require('./models/endingMines.js');
 const EndingMount = require('./models/endingMounts.js');
 const EndingPig = require('./models/endingPigs.js');
+const User = require('./models/user.js');
+const Kuku = require('./models/locationKuku.js');
+const Mine= require('./models/locationMine.js');
+const Mount = require('./models/locationMount.js');
+const Snag = require('./models/locationSnag.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -166,6 +171,7 @@ const path = require('path');
 const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 const mustacheExpress = require('mustache-express');
+const session = require('express-session');
 // const cors = require('cors')
 const app = express();
 const url = process.env.MONGOLAB_URI;
@@ -184,6 +190,16 @@ app.use(bodyParser.urlencoded({
 app.use(expressValidator());
 
 //=========================//
+
+//====START SESSION===//
+
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}));
+
+//==========================//
 
 //====MONGOOSE PROMISE===//
 
@@ -224,6 +240,152 @@ app.get('/home', function(req, res) {
 
 //==========================//
 
+//====RENDER START PAGE===//
+
+app.get('/start', function(req, res) {
+  User.find({username: req.session.username}).then(function(users) {
+  res.render('astart', {
+    users: users,
+  });
+});
+});
+
+//==========================//
+
+//====RENDER SIGNUP PAGE===//
+
+app.get('/signup', function(req, res) {
+  res.render('asignup')
+});
+
+//==========================//
+
+//====RENDER LOGIN PAGE===//
+
+app.get('/login', function(req, res) {
+  res.render('login')
+});
+
+//==========================//
+
+//====RENDER LOGIN PAGE2===//
+
+app.get('/login', function(req, res) {
+  if (req.session && req.session.authenticated) {
+    User.findOne({
+        username: req.session.username,
+        password: req.session.password
+      }).then(function(user) {
+      if (user) {
+        req.session.username = req.body.username;
+        var username = req.session.username;
+        var userid = req.session.userId;
+        res.render('login', {
+          user: user
+        });
+      }
+    })
+  } else {
+    res.redirect('/signup')
+  }
+})
+
+//==========================//
+
+//====POST LOGIN FOR USER===//
+
+app.post('/login', function(req, res) {
+  let username = req.body.username;
+  let password = req.body.password;
+
+  User.findOne({
+      username: username,
+      password: password,
+  }).then(user => {
+    console.log(user);
+    if (user.password == password) {
+      req.session.username = username;
+      req.session.authenticated = true;
+      console.log(req.session);
+
+      res.redirect('/start');
+    } else {
+      res.redirect('/login');
+      console.log("This is my session", req.session)
+    }
+  })
+})
+
+//==========================//
+
+//====POST TO SIGNUP PAGE===//
+
+app.post('/signup', function(req, res) {
+  User.create({
+    username: req.body.username,
+    password: req.body.password,
+  }).then(function(user) {
+    req.username = user.username;
+    req.session.authenticated = true;
+}).then(user => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====CREATE NEW KUKU===//
+
+app.post('/kuku', function(req, res) {
+  Kuku.create({
+    kuku: req.body.kuku,
+    user: req.session.username,
+  }).then(kukus => {
+  res.redirect('/page1')
+});
+});
+
+//==========================//
+
+//====CREATE NEW SNAG===//
+
+app.post('/snag', function(req, res) {
+  Snag.create({
+    snag: req.body.snag,
+    user: req.session.username,
+  }).then(snagss => {
+  res.redirect('/page100')
+});
+});
+
+//==========================//
+
+//====CREATE NEW MOUNT===//
+
+app.post('/mount', function(req, res) {
+  Mount.create({
+    mount: req.body.mount,
+    user: req.session.username,
+  }).then(mounts => {
+  res.redirect('/page152')
+});
+});
+
+//==========================//
+
+//====CREATE NEW MINE===//
+
+app.post('/mine', function(req, res) {
+  Mine.create({
+    mine: req.body.mine,
+    user: req.session.username,
+  }).then(mines => {
+  res.redirect('/page170')
+});
+});
+
+//==========================//
+
 //====RENDER THANKS PAGE===//
 
 app.get('/thanks', function(req, res) {
@@ -232,10 +394,40 @@ app.get('/thanks', function(req, res) {
 
 //==========================//
 
-//====RENDER THANKS PAGE===//
+//====RENDER MAP PAGE===//
+
+app.get('/map', function(req, res) {
+  User.find({username: req.session.username}).then(function(users){
+    Kuku.findOne({}).then(function(kukus){
+      Snag.findOne({}).then(function(snags){
+        Mount.findOne({}).then(function(mounts){
+          Mine.findOne({}).then(function(mines){
+
+
+      res.render('map', {
+        users: users,
+        kukus: kukus,
+        snags: snags,
+        mounts: mounts,
+        mines: mines,
+            });
+          });
+        });
+      });
+    });
+  });
+});
+
+//==========================//
+
+//====RENDER PAGE 0 PAGE===//
 
 app.get('/page0', function(req, res) {
-  res.render('page0')
+  User.find({username: req.session.username}).then(function(users){
+  res.render('page0', {
+    users: users,
+  });
+});
 });
 
 //==========================//

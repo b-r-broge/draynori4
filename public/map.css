@@ -1,0 +1,77 @@
+* {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  mix-blend-mode: multiply;
+}
+
+body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 750px;
+  width: 1100px;
+  margin: 0;
+  background-image: url('/map.png');
+  background-size: cover;
+}
+
+.bodywrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.kuku {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 450px;
+  left: 700px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+span {
+  font-size: 45px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.snag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 370px;
+  left: 300px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+.mine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+  left: 450px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
+
+.mount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+}
