@@ -19,6 +19,17 @@ body {
   background-size: cover;
 }
 
+.submitbtn {
+  opacity: 0;
+  z-index: 11;
+  border: black 2px solid;
+  position: absolute;
+  width: 500px;
+  height: 75px;
+  margin-left: 20px;
+  margin-top: -70px;
+}
+
 h3 {
   z-index: 5;
   margin-top: -40vh;
@@ -194,14 +205,26 @@ h4 {
   margin-top: 25vh;
 }
 
+.plink {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
 input {
   font-size: 30px;
   font-weight: bold;
-  border: black solid 3px;
+  /*border: black solid 3px;*/
   cursor: pointer;
   position: absolute;
   margin-left: 25vw;
   margin-top: 2vh;
+}
+
+.inputfield {
+  visibility: hidden;
 }
 
 input:hover {

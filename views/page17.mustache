@@ -16,7 +16,10 @@
     <div class="linkContainer">
     <a href="/page57"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 57}</h5></a>
     <a href="/page58"><div class="plink"><p>else if</p> <h6>{{option2}}</h6></div> <h5>{go to page 58}</h5></a>
-    <a href="/page41"><div class="plink"><p>else</p> <h6>{{option3}}</h6></div> <h5>{go to page 41}</h5></a>
+    <form class="plink" action="/spider" method="post">
+      <input class="inputfield" type="text" value="Man Eating Spider" name="spider" />
+      <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <h5>{go to page 41}</h5></div>
+    </form>
   </div>
 
     {{/page17}}

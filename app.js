@@ -11,6 +11,8 @@ const Mount = require('./models/locationMount.js');
 const Snag = require('./models/locationSnag.js');
 const Spider = require('./models/locationSpider.js');
 const Croc = require('./models/locationCroc.js');
+const Cave = require('./models/locationCave.js');
+const Bear = require('./models/locationBear.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -414,6 +416,32 @@ app.post('/croc', function(req, res) {
 
 //==========================//
 
+//====CREATE NEW BEAR===//
+
+app.post('/bear', function(req, res) {
+  Bear.create({
+    bear: req.body.bear,
+    user: req.session.username,
+  }).then(bears => {
+  res.redirect('/page76')
+});
+});
+
+//==========================//
+
+//====CREATE NEW CAVE===//
+
+app.post('/cave', function(req, res) {
+  Cave.create({
+    cave: req.body.cave,
+    user: req.session.username,
+  }).then(caves => {
+  res.redirect('/page15')
+});
+});
+
+//==========================//
+
 //====RENDER THANKS PAGE===//
 
 app.get('/thanks', function(req, res) {
@@ -432,6 +460,8 @@ app.get('/map', function(req, res) {
           Mine.findOne({}).then(function(mines){
             Croc.findOne({}).then(function(crocs){
               Spider.findOne({}).then(function(spiders){
+                Bear.findOne({}).then(function(bears){
+                  Cave.findOne({}).then(function(caves){
 
       res.render('map', {
         users: users,
@@ -441,6 +471,10 @@ app.get('/map', function(req, res) {
         mines: mines,
         crocs: crocs,
         spiders: spiders,
+        bears: bears,
+        caves: caves,
+                    });
+                  });
                 });
               });
             });
