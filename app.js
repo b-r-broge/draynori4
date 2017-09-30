@@ -423,7 +423,7 @@ app.post('/bear', function(req, res) {
     bear: req.body.bear,
     user: req.session.username,
   }).then(bears => {
-  res.redirect('/page76')
+  res.redirect('/page153')
 });
 });
 

@@ -151,7 +151,7 @@ h5 {
 }
 
 .submitbtn {
-  /*opacity: 0;*/
+  opacity: 0;
   z-index: 11;
   border: black 2px solid;
   position: absolute;
