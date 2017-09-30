@@ -29,6 +29,23 @@ h3 {
   transform: rotate(-4deg);
 }
 
+.maps {
+  text-decoration: none;
+  color: red;
+  position: fixed;
+  z-index: 11;
+  top: 25px;
+  right: 25px;
+  font-size: 22px;
+  font-family: 'Frijole', cursive;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: normal;
+}
+
+.maps:hover {
+  transform: scale(1.12);
+}
+
 .bodywrapper {
   display: flex;
   justify-content: center;
