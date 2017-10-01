@@ -13,6 +13,13 @@ const Spider = require('./models/locationSpider.js');
 const Croc = require('./models/locationCroc.js');
 const Cave = require('./models/locationCave.js');
 const Bear = require('./models/locationBear.js');
+const Gold1 = require('./models/gold1.js');
+const Gold19 = require('./models/gold19.js');
+const Gold22 = require('./models/gold22.js');
+const Gold24 = require('./models/gold24.js');
+const Gold102 = require('./models/gold102.js');
+const Gold167 = require('./models/gold167.js');
+const Gold156 = require('./models/gold156.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -335,6 +342,131 @@ app.post('/signup', function(req, res) {
   res.redirect('/thanks')
 });
 });
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 5===//
+
+app.post('/gold1', function(req, res) {
+  Gold1.create({
+    gold1: req.body.gold1,
+    user: req.session.username,
+  }).then(gold1 => {
+  res.redirect('/page5')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 19===//
+
+app.post('/gold19', function(req, res) {
+  Gold19.create({
+    gold19: req.body.gold19,
+    user: req.session.username,
+  }).then(gold19 => {
+  res.redirect('/page19')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 22===//
+
+app.post('/gold22', function(req, res) {
+  Gold22.create({
+    gold22: req.body.gold22,
+    user: req.session.username,
+  }).then(gold22 => {
+  res.redirect('/page22')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 24===//
+
+app.post('/gold24', function(req, res) {
+  Gold24.create({
+    gold24: req.body.gold24,
+    user: req.session.username,
+  }).then(gold24 => {
+  res.redirect('/page24')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 102===//
+
+app.post('/gold102', function(req, res) {
+  Gold102.create({
+    gold102: req.body.gold102,
+    user: req.session.username,
+  }).then(gold102 => {
+  res.redirect('/page102')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 167===//
+
+app.post('/gold167', function(req, res) {
+  Gold167.create({
+    gold167: req.body.gold167,
+    user: req.session.username,
+  }).then(gold167 => {
+  res.redirect('/page167')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 156===//
+
+app.post('/gold156', function(req, res) {
+  Gold156.create({
+    gold156: req.body.gold156,
+    user: req.session.username,
+  }).then(gold156 => {
+  res.redirect('/page156')
+});
+});
+
+//==========================//
+
+//====GET ALL GOLD===//
+
+app.get('/gold', function(req, res) {
+  User.find({user: req.session.username}).then(function(users){
+    Gold1.findOne({user: req.session.username}).then(function(gold1){
+      Gold19.findOne({user: req.session.username}).then(function(gold19){
+        Gold22.findOne({user: req.session.username}).then(function(gold22){
+          Gold24.findOne({user: req.session.username}).then(function(gold24){
+            Gold102.findOne({user: req.session.username}).then(function(gold102){
+              Gold156.findOne({user: req.session.username}).then(function(gold156){
+                Gold167.findOne({user: req.session.username}).then(function(gold167){
+
+      res.render('gold', {
+        users: users,
+        gold1: gold1,
+        gold19: gold19,
+        gold22: gold22,
+        gold24: gold24,
+        gold102: gold102,
+        gold156: gold156,
+        gold167: gold167,
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
 
 //==========================//
 

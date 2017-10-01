@@ -14,13 +14,29 @@
       {{text}}
     </h2>
     <div class="linkContainer">
-    <a href="/page19"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 19}</h5></a>
+
+      <form class="plink" action="/gold19" method="post">
+        <input class="inputfield" type="text" value="1000000" name="gold19" />
+        <a href="/page12"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option1}}</h6></div> <h5>{go to page 19}</h5></a>
+      </form>
+
     <a href="/page20"><div class="plink"><p>else if</p> <h6>{{option2}}</h6></div> <h5>{go to page 20}</h5></a>
     <a href="/page21"><div class="plink"><p>else if</p> <h6>{{option3}}</h6></div> <h5>{go to page 21}</h5></a>
-    <a href="/page22"><div class="plink"><p>else</p> <h6>{{option4}}</h6></div> <h5>{go to page 22}</h5></a>
+
+    <form class="plink" action="/gold22" method="post">
+      <input class="inputfield" type="text" value="50000000" name="gold22" />
+      <a href="/page22"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option4}}</h6></div> <h5>{go to page 22}</h5></a>
+    </form>
+
   </div>
 
+
+
+
+
     {{/page5}}
+
+    <a class="goldfound">view gold</a>
 
     <a class="maps" href="/map">view map</a>
   </div>

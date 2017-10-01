@@ -19,6 +19,34 @@ body {
   background-size: cover;
 }
 
+.inputfield {
+  visibility: hidden;
+}
+
+.goldfound {
+  cursor: pointer;
+  color: green;
+  font-size: 25px;
+  font-family: 'Frijole', cursive;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  z-index: 10;
+  position: fixed;
+  top: 25px;
+  left: 25px;
+}
+
+.submitbtn {
+  cursor: pointer;
+  opacity: 0;
+  z-index: 11;
+  border: black 2px solid;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  margin-left: 0px;
+  margin-top: 45px;
+}
+
 h3 {
   z-index: 5;
   margin-top: -40vh;

@@ -15,14 +15,19 @@
       {{text}}
     </h2>
     <div class="linkContainer">
-    <a href="/page102">
+    <form class="plink" action="/gold102" method="post">
       <div class="JSONcontainer">
+        <input class="inputfield" type="text" value="450" name="gold102" />
+        <a href="/page102">
         <div class="top">{{option1}}: {</div>
         <div class="middle">time: 1 hour,</div>
         <div class="middle2">to_page: 102,</div>
         <div class="bottom">},</div>
+        <input class="submitbtn" type="submit">
+      </a>
       </div>
-    </a>
+
+    </form>
     <a href="/page105">
       <div class="JSONcontainer">
         <div class="top">{{option2}}: {</div>
@@ -39,12 +44,13 @@
         <div class="bottom">},</div>
       </div>
     </a>
-
-
   </div>
+
 
     {{/page101}}
 <a class="maps" href="/map">view map</a>
+
+<a class="goldfound" href="/gold">view gold</a>
   </div>
   </body>
 </html>
