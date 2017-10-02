@@ -48,6 +48,7 @@ h4 {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .headerLinkContainer2 {
