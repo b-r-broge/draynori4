@@ -470,6 +470,192 @@ app.get('/gold', function(req, res) {
 
 //==========================//
 
+//====GET GOLD RESET===//
+
+app.get('/gold_reset', function(req, res){
+  User.find({user: req.session.username}).then(function(users){
+    Kuku.findOne({user: req.session.username}).then(function(kukus){
+      Snag.findOne({user: req.session.username}).then(function(snags){
+        Mount.findOne({user: req.session.username}).then(function(mounts){
+          Mine.findOne({user: req.session.username}).then(function(mines){
+    res.render('gold_reset', {
+      users:users,
+      kukus: kukus,
+      snags: snags,
+      mounts: mounts,
+      mines: mines,
+    });
+  });
+});
+});
+});
+});
+});
+//==========================//
+
+//====GET MAP RESET===//
+
+app.get('/map_reset', function(req, res){
+  User.find({user: req.session.username}).then(function(users){
+    res.render('map_reset', {
+      users:users,
+    });
+  });
+});
+//==========================//
+
+//====GET TOTAL RESET===//
+
+app.get('/total_reset', function(req, res){
+  User.find({user: req.session.username}).then(function(users){
+    res.render('total_reset', {
+      users:users,
+    });
+  });
+});
+//==========================//
+
+//====DELETE ALL GOLD===//
+
+app.post('/gold_reset', function(req, res){
+  User.find({user: req.session.username}).then(function(users){
+    Kuku.findOne({user: req.session.username}).then(function(kukus){
+      Snag.findOne({user: req.session.username}).then(function(snags){
+        Mount.findOne({user: req.session.username}).then(function(mounts){
+          Mine.findOne({user: req.session.username}).then(function(mines){
+    Gold1.remove({user: req.session.username}).then(function(gold1){
+      Gold19.remove({user: req.session.username}).then(function(gold19){
+        Gold22.remove({user: req.session.username}).then(function(gold22){
+          Gold24.remove({user: req.session.username}).then(function(gold24){
+            Gold102.remove({user: req.session.username}).then(function(gold102){
+              Gold156.remove({user: req.session.username}).then(function(gold156){
+                Gold167.remove({user: req.session.username}).then(function(gold167){
+
+      res.render('gold_reset', {
+        users: users,
+        kukus: kukus,
+        mounts: mounts,
+        mines: mines,
+        snags: snags,
+        gold1: gold1,
+        gold19: gold19,
+        gold22: gold22,
+        gold24: gold24,
+        gold102: gold102,
+        gold156: gold156,
+        gold167: gold167,
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+});
+});
+});
+});
+//==========================//
+
+//====DELETE ALL DISCOVERIES===//
+
+app.post('/total_reset', function(req, res){
+  User.find({user: req.session.username}).then(function(users){
+    Gold1.remove({user: req.session.username}).then(function(gold1){
+      Gold19.remove({user: req.session.username}).then(function(gold19){
+        Gold22.remove({user: req.session.username}).then(function(gold22){
+          Gold24.remove({user: req.session.username}).then(function(gold24){
+            Gold102.remove({user: req.session.username}).then(function(gold102){
+              Gold156.remove({user: req.session.username}).then(function(gold156){
+                Gold167.remove({user: req.session.username}).then(function(gold167){
+                  Kuku.remove({user: req.session.username}).then(function(kukus){
+                    Snag.remove({user: req.session.username}).then(function(snags){
+                      Mount.remove({user: req.session.username}).then(function(mounts){
+                        Mine.remove({user: req.session.username}).then(function(mines){
+                          Croc.remove({user: req.session.username}).then(function(crocs){
+                            Spider.remove({user: req.session.username}).then(function(spiders){
+                              Bear.remove({user: req.session.username}).then(function(bears){
+                                Cave.remove({user: req.session.username}).then(function(caves){
+
+      res.render('total_reset', {
+
+        users: users,
+        kukus: kukus,
+        snags: snags,
+        mounts: mounts,
+        mines: mines,
+        crocs: crocs,
+        spiders: spiders,
+        bears: bears,
+        caves: caves,
+        gold1: gold1,
+        gold19: gold19,
+        gold22: gold22,
+        gold24: gold24,
+        gold102: gold102,
+        gold156: gold156,
+        gold167: gold167,
+                                        });
+                                      });
+                                    });
+                                  });
+                                });
+                              });
+                            });
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+
+//==========================//
+
+//====DELETE ALL MAP DATA===//
+
+app.post('/map_reset', function(req, res){
+  User.find({user: req.session.username}).then(function(users){
+    Kuku.remove({user: req.session.username}).then(function(kukus){
+      Snag.remove({user: req.session.username}).then(function(snags){
+        Mount.remove({user: req.session.username}).then(function(mounts){
+          Mine.remove({user: req.session.username}).then(function(mines){
+            Croc.remove({user: req.session.username}).then(function(crocs){
+              Spider.remove({user: req.session.username}).then(function(spiders){
+                Bear.remove({user: req.session.username}).then(function(bears){
+                  Cave.remove({user: req.session.username}).then(function(caves){
+
+      res.render('map_reset', {
+        users: users,
+        kukus: kukus,
+        snags: snags,
+        mounts: mounts,
+        mines: mines,
+        crocs: crocs,
+        spiders: spiders,
+        bears: bears,
+        caves: caves,
+                          });
+                        });
+                      });
+                    });
+                  });
+                });
+              });
+            });
+          });
+        });
+      });
+
+//==========================//
+
 //====CREATE NEW KUKU===//
 
 app.post('/kuku', function(req, res) {
@@ -623,7 +809,31 @@ app.get('/map', function(req, res) {
 
 app.get('/page0', function(req, res) {
   User.find({username: req.session.username}).then(function(users){
+    Kuku.findOne({user: req.session.username}).then(function(kukus){
+      Snag.findOne({user: req.session.username}).then(function(snags){
+        Mount.findOne({user: req.session.username}).then(function(mounts){
+          Mine.findOne({user: req.session.username}).then(function(mines){
   res.render('page0', {
+    users: users,
+    kukus: kukus,
+    snags: snags,
+    mounts: mounts,
+    mines: mines,
+            });
+          });
+        });
+      });
+    });
+  });
+});
+
+//==========================//
+
+//====RENDER PAGE 01 PAGE===//
+
+app.get('/page01', function(req, res) {
+  User.find({username: req.session.username}).then(function(users){
+  res.render('page01', {
     users: users,
   });
 });
@@ -5247,6 +5457,16 @@ app.post('/page178', function(req, res) {
   }).then(page => {
   res.redirect('/thanks')
 });
+});
+
+//==========================//
+
+//==== LOGOUT ===//
+
+app.post('/logout', function(req, res) {
+  req.session.destroy(function(err) {})
+  res.redirect('/home');
+  console.log(req.session);
 });
 
 //==========================//

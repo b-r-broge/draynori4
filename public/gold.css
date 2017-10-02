@@ -27,6 +27,23 @@ body {
   flex-flow: row wrap;
 }
 
+.headerDiv {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+}
+
+.goldTitle {
+  font-size: 35px;
+}
+
+.goldTitle2 {
+  font-size: 25px;
+}
+
 .goldContainer {
   display: flex;
   flex-flow: column wrap;
