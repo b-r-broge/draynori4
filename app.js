@@ -12,6 +12,7 @@ const Snag = require('./models/locationSnag.js');
 const Spider = require('./models/locationSpider.js');
 const Croc = require('./models/locationCroc.js');
 const Cave = require('./models/locationCave.js');
+const Ruin = require('./models/locationRuins.js');
 const Bear = require('./models/locationBear.js');
 const Gold1 = require('./models/gold1.js');
 const Gold19 = require('./models/gold19.js');
@@ -20,6 +21,10 @@ const Gold24 = require('./models/gold24.js');
 const Gold102 = require('./models/gold102.js');
 const Gold167 = require('./models/gold167.js');
 const Gold156 = require('./models/gold156.js');
+const Gold73 = require('./models/gold73.js');
+const Gold74 = require('./models/gold74.js');
+const Gold200 = require('./models/gold200.js');
+const Gold203 = require('./models/gold203.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -171,6 +176,14 @@ const Page175 = require('./models/page175.js');
 const Page176 = require('./models/page176.js');
 const Page177 = require('./models/page177.js');
 const Page178 = require('./models/page178.js');
+const Page200 = require('./models/page200.js');
+const Page201 = require('./models/page201.js');
+const Page202 = require('./models/page202.js');
+const Page203 = require('./models/page203.js');
+const Page204 = require('./models/page204.js');
+const Page205 = require('./models/page205.js');
+const Page206 = require('./models/page206.js');
+const Page207 = require('./models/page207.js');
 
 //=================//
 
@@ -436,6 +449,58 @@ app.post('/gold156', function(req, res) {
 
 //==========================//
 
+//====CREATE NEW GOLD PAGE 73===//
+
+app.post('/gold73', function(req, res) {
+  Gold73.create({
+    gold73: req.body.gold73,
+    user: req.session.username,
+  }).then(gold73 => {
+  res.redirect('/page73')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 74===//
+
+app.post('/gold74', function(req, res) {
+  Gold74.create({
+    gold74: req.body.gold74,
+    user: req.session.username,
+  }).then(gold74 => {
+  res.redirect('/page74')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 200===//
+
+app.post('/gold200', function(req, res) {
+  Gold200.create({
+    gold200: req.body.gold200,
+    user: req.session.username,
+  }).then(gold200 => {
+  res.redirect('/page200')
+});
+});
+
+//==========================//
+
+//====CREATE NEW GOLD PAGE 203===//
+
+app.post('/gold203', function(req, res) {
+  Gold203.create({
+    gold203: req.body.gold203,
+    user: req.session.username,
+  }).then(gold203 => {
+  res.redirect('/page203')
+});
+});
+
+//==========================//
+
 //====GET ALL GOLD===//
 
 app.get('/gold', function(req, res) {
@@ -447,6 +512,10 @@ app.get('/gold', function(req, res) {
             Gold102.findOne({user: req.session.username}).then(function(gold102){
               Gold156.findOne({user: req.session.username}).then(function(gold156){
                 Gold167.findOne({user: req.session.username}).then(function(gold167){
+                  Gold73.findOne({user: req.session.username}).then(function(gold73){
+                    Gold74.findOne({user: req.session.username}).then(function(gold74){
+                      Gold200.findOne({user: req.session.username}).then(function(gold200){
+                        Gold203.findOne({user: req.session.username}).then(function(gold203){
 
       res.render('gold', {
         users: users,
@@ -457,6 +526,14 @@ app.get('/gold', function(req, res) {
         gold102: gold102,
         gold156: gold156,
         gold167: gold167,
+        gold73: gold73,
+        gold74: gold74,
+        gold200: gold200,
+        gold203: gold203,
+                            });
+                          });
+                        });
+                      });
                     });
                   });
                 });
@@ -530,6 +607,10 @@ app.post('/gold_reset', function(req, res){
             Gold102.remove({user: req.session.username}).then(function(gold102){
               Gold156.remove({user: req.session.username}).then(function(gold156){
                 Gold167.remove({user: req.session.username}).then(function(gold167){
+                  Gold73.remove({user: req.session.username}).then(function(gold73){
+                    Gold74.remove({user: req.session.username}).then(function(gold74){
+                      Gold200.remove({user: req.session.username}).then(function(gold200){
+                        Gold203.remove({user: req.session.username}).then(function(gold203){
 
       res.render('gold_reset', {
         users: users,
@@ -544,6 +625,14 @@ app.post('/gold_reset', function(req, res){
         gold102: gold102,
         gold156: gold156,
         gold167: gold167,
+        gold73: gold73,
+        gold74: gold74,
+        gold200: gold200,
+        gold203: gold203,
+                            });
+                          });
+                        });
+                      });
                     });
                   });
                 });
@@ -571,6 +660,10 @@ app.post('/total_reset', function(req, res){
             Gold102.remove({user: req.session.username}).then(function(gold102){
               Gold156.remove({user: req.session.username}).then(function(gold156){
                 Gold167.remove({user: req.session.username}).then(function(gold167){
+                  Gold73.remove({user: req.session.username}).then(function(gold73){
+                    Gold74.remove({user: req.session.username}).then(function(gold74){
+                      Gold200.remove({user: req.session.username}).then(function(gold200){
+                        Gold203.remove({user: req.session.username}).then(function(gold203){
                   Kuku.remove({user: req.session.username}).then(function(kukus){
                     Snag.remove({user: req.session.username}).then(function(snags){
                       Mount.remove({user: req.session.username}).then(function(mounts){
@@ -579,6 +672,7 @@ app.post('/total_reset', function(req, res){
                             Spider.remove({user: req.session.username}).then(function(spiders){
                               Bear.remove({user: req.session.username}).then(function(bears){
                                 Cave.remove({user: req.session.username}).then(function(caves){
+                                  Ruin.remove({user: req.session.username}).then(function(ruins){
 
       res.render('total_reset', {
 
@@ -591,6 +685,7 @@ app.post('/total_reset', function(req, res){
         spiders: spiders,
         bears: bears,
         caves: caves,
+        ruins: ruins,
         gold1: gold1,
         gold19: gold19,
         gold22: gold22,
@@ -598,6 +693,15 @@ app.post('/total_reset', function(req, res){
         gold102: gold102,
         gold156: gold156,
         gold167: gold167,
+        gold73: gold73,
+        gold74: gold74,
+        gold200: gold200,
+        gold203: gold203,
+                                                  });
+                                                });
+                                              });
+                                            });
+                                          });
                                         });
                                       });
                                     });
@@ -631,6 +735,7 @@ app.post('/map_reset', function(req, res){
               Spider.remove({user: req.session.username}).then(function(spiders){
                 Bear.remove({user: req.session.username}).then(function(bears){
                   Cave.remove({user: req.session.username}).then(function(caves){
+                    Ruin.remove({user: req.session.username}).then(function(ruins){
 
       res.render('map_reset', {
         users: users,
@@ -642,6 +747,8 @@ app.post('/map_reset', function(req, res){
         spiders: spiders,
         bears: bears,
         caves: caves,
+        ruins: ruins,
+                            });
                           });
                         });
                       });
@@ -760,6 +867,19 @@ app.post('/cave', function(req, res) {
 
 //==========================//
 
+//====CREATE NEW RUIN===//
+
+app.post('/ruin', function(req, res) {
+  Ruin.create({
+    ruin: req.body.ruin,
+    user: req.session.username,
+  }).then(ruins => {
+  res.redirect('/page72')
+});
+});
+
+//==========================//
+
 //====RENDER THANKS PAGE===//
 
 app.get('/thanks', function(req, res) {
@@ -780,6 +900,7 @@ app.get('/map', function(req, res) {
               Spider.findOne({user: req.session.username}).then(function(spiders){
                 Bear.findOne({user: req.session.username}).then(function(bears){
                   Cave.findOne({user: req.session.username}).then(function(caves){
+                    Ruin.findOne({user: req.session.username}).then(function(ruins){
 
       res.render('map', {
         users: users,
@@ -791,6 +912,7 @@ app.get('/map', function(req, res) {
         spiders: spiders,
         bears: bears,
         caves: caves,
+        ruins: ruins,
                     });
                   });
                 });
@@ -801,6 +923,7 @@ app.get('/map', function(req, res) {
       });
     });
   });
+});
 });
 
 //==========================//
@@ -5448,6 +5571,262 @@ app.get('/page178', function(req, res) {
 
 app.post('/page178', function(req, res) {
   Page178.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page200 ===//
+
+app.get('/page200', function(req, res) {
+  Page200.find({}).then(function(page200) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page200', {
+        page200: page200,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page200 ===//
+
+app.post('/page200', function(req, res) {
+  Page200.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page201 ===//
+
+app.get('/page201', function(req, res) {
+  Page201.find({}).then(function(page201) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page201', {
+        page201: page201,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page201 ===//
+
+app.post('/page201', function(req, res) {
+  Page201.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page202 ===//
+
+app.get('/page202', function(req, res) {
+  Page202.find({}).then(function(page202) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page202', {
+        page202: page202,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page202 ===//
+
+app.post('/page202', function(req, res) {
+  Page202.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page203 ===//
+
+app.get('/page203', function(req, res) {
+  Page203.find({}).then(function(page203) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page203', {
+        page203: page203,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page203 ===//
+
+app.post('/page203', function(req, res) {
+  Page203.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page204 ===//
+
+app.get('/page204', function(req, res) {
+  Page204.find({}).then(function(page204) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page204', {
+        page204: page204,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page204 ===//
+
+app.post('/page204', function(req, res) {
+  Page204.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page205 ===//
+
+app.get('/page205', function(req, res) {
+  Page205.find({}).then(function(page205) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page205', {
+        page205: page205,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page205 ===//
+
+app.post('/page205', function(req, res) {
+  Page205.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page206 ===//
+
+app.get('/page206', function(req, res) {
+  Page206.find({}).then(function(page206) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page206', {
+        page206: page206,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page206 ===//
+
+app.post('/page206', function(req, res) {
+  Page206.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page207 ===//
+
+app.get('/page207', function(req, res) {
+  Page207.find({}).then(function(page207) {
+    EndingMount.aggregate().sample(1).then(function(endingmounts){
+      res.render('page207', {
+        page207: page207,
+        endingmounts: endingmounts,
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page207 ===//
+
+app.post('/page207', function(req, res) {
+  Page207.create({
     text: req.body.text,
     option1: req.body.option1,
     option2: req.body.option2,

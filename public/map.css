@@ -176,3 +176,18 @@ span {
 .bear img {
   width: 50px;
 }
+
+.ruin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 550px;
+  left: 600px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.ruin img {
+  width: 50px;
+}

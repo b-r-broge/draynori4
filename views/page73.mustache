@@ -8,31 +8,31 @@
   </head>
   <body>
     <div class="bodywrapper">
+      {{#page73}}
+      <h3>page 73</h3>
+    <h2>
+      {{text}}
+    </h2>
 
-      <h2>
-          {{#endings}}
-            <h2 class="beg">{{beginning}}</h2>
-            <h2 class="txt">{{text}}</h2>
-            <h2 class="end">{{end}}</h2>
-            <div class="restartContainer">
-            <h2 class="strt">Start a new game?</h2>
-            <div class="new"><a class="yes" href="/page0">Yes</a>
-              <span>
+    <div class="restartContainer">
+    <h2 class="strt">Start a new game?</h2>
+    <div class="new"><a class="yes" href="/page0">Yes</a>
+      <span>
 
-              <form class="plink" action="/logout" method="post">
-                <input class="inputfield" type="text" name="logout" />
-                <div class="plink"><input class="submitbtn1" value="No" type="submit">
-              </form>
+      <form class="plink" action="/logout" method="post">
+        <input class="inputfield" type="text" name="logout" />
+        <div class="plink"><input class="submitbtn1" value="No" type="submit">
+      </form>
 
-            </span></div>
-          </div>
-          </div>
-          {{/endings}}
-      </h2>
+    </span></div>
+  </div>
+  </div>
 
-<a class="maps" href="/map">view map</a>
+    {{/page73}}
 
-<a class="goldfound" href="/gold">view gold</a>
+    <a class="maps" href="/map">view map</a>
+
+    <a class="goldfound" href="/gold">view gold</a>
   </div>
   </body>
 </html>

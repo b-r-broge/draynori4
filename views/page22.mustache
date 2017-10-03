@@ -14,9 +14,22 @@
       {{text}}
     </h2>
     <div class="linkContainer">
-    <a href="/page72"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 72}</h5></a>
-    <a href="/page73"><div class="plink"><p>else if</p> <h6>{{option2}}</h6></div> <h5>{go to page 73}</h5></a>
-    <a href="/page74"><div class="plink"><p>else</p> <h6>{{option3}}</h6></div> <h5>{go to page 74}</h5></a>
+
+      <form class="plink" action="/ruin" method="post">
+        <input class="inputfield" type="text" value="Mythical Ruins" name="ruin" />
+        <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option1}}</h6></div> <h5>{go to page 72}</h5></div>
+      </form>
+
+    <form class="plink" action="/gold73" method="post">
+      <input class="inputfield" type="text" value="450000000" name="gold73" />
+      <a href="/page73"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <h5>{go to page 73}</h5></a>
+    </form>
+
+    <form class="plink" action="/gold74" method="post">
+      <input class="inputfield" type="text" value="6752000" name="gold74" />
+      <a href="/page74"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option3}}</h6></div> <h5>{go to page 74}</h5></a>
+    </form>
+
   </div>
 
     {{/page22}}

@@ -8,31 +8,21 @@
   </head>
   <body>
     <div class="bodywrapper">
+      {{#page74}}
+      <h3>page 74</h3>
+    <h2>
+      {{text}}
+    </h2>
+    <div class="linkContainer">
+    <a href="/page204"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 204}</h5></a>
+    <a href="/page207"><div class="plink"><p>else</p> <h6>{{option2}}</h6></div> <h5>{go to page 207}</h5></a>
+  </div>
 
-      <h2>
-          {{#endings}}
-            <h2 class="beg">{{beginning}}</h2>
-            <h2 class="txt">{{text}}</h2>
-            <h2 class="end">{{end}}</h2>
-            <div class="restartContainer">
-            <h2 class="strt">Start a new game?</h2>
-            <div class="new"><a class="yes" href="/page0">Yes</a>
-              <span>
+    {{/page74}}
 
-              <form class="plink" action="/logout" method="post">
-                <input class="inputfield" type="text" name="logout" />
-                <div class="plink"><input class="submitbtn1" value="No" type="submit">
-              </form>
+    <a class="maps" href="/map">view map</a>
 
-            </span></div>
-          </div>
-          </div>
-          {{/endings}}
-      </h2>
-
-<a class="maps" href="/map">view map</a>
-
-<a class="goldfound" href="/gold">view gold</a>
+    <a class="goldfound" href="/gold">view gold</a>
   </div>
   </body>
 </html>
