@@ -17,22 +17,27 @@
 
       <form class="plink" action="/ruin" method="post">
         <input class="inputfield" type="text" value="Mythical Ruins" name="ruin" />
-        <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option1}}</h6></div> <h5>{go to page 72}</h5></div>
+        <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option1}}</h6></div> <div class="mouseover"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div>
+        <div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 72}</h5></div>
       </form>
 
     <form class="plink" action="/gold73" method="post">
       <input class="inputfield" type="text" value="450000000" name="gold73" />
-      <a href="/page73"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <h5>{go to page 73}</h5></a>
+      <a href="/page73"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <div class="mouseover2"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div><div class="iftext">
+        {{text}}</div>{{/ifelses}}</div></div><h5>{go to page 73}</h5></a>
     </form>
 
     <form class="plink" action="/gold74" method="post">
       <input class="inputfield" type="text" value="6752000" name="gold74" />
-      <a href="/page74"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option3}}</h6></div> <h5>{go to page 74}</h5></a>
+      <a href="/page74"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option3}}</h6></div> <div class="mouseover3"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:
+      </div><div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 74}</h5></a>
     </form>
 
   </div>
 
     {{/page22}}
+
+    <a class="question" href="/page01"><img class="question" src="/question.png" /></a>
 
     <a class="maps" href="/map">view map</a>
 

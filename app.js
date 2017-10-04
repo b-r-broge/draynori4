@@ -1,4 +1,6 @@
 //=====MODELS======//
+const Ifelse = require('./models/ifelse.js');
+const Json = require('./models/json.js');
 const Ending = require('./models/endings.js');
 const EndingTown = require('./models/endingTowns.js');
 const EndingMine = require('./models/endingMines.js');
@@ -353,6 +355,32 @@ app.post('/signup', function(req, res) {
     req.session.authenticated = true;
 }).then(user => {
   res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====CREATE IF ELSE===//
+
+app.post('/ifelse', function(req, res) {
+  Ifelse.create({
+    number: req.body.number,
+    text: req.body.text,
+  }).then(ifelse => {
+  res.json(ifelse)
+});
+});
+
+//==========================//
+
+//====CREATE JSON===//
+
+app.post('/json', function(req, res) {
+  Json.create({
+    number: req.body.number,
+    text: req.body.text,
+  }).then(json => {
+  res.json(json)
 });
 });
 
@@ -1088,9 +1116,12 @@ app.post('/endingPigs', function(req, res) {
 
 app.get('/page1', function(req, res) {
   Page1.find({}).then(page1 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page1', {
+      ifelses: ifelses,
       page1: page1,
-    })
+    });
+    });
   });
 });
 
@@ -1117,8 +1148,11 @@ app.post('/page1', function(req, res) {
 
 app.get('/page2', function(req, res) {
   Page2.find({}).then(page2 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page2', {
+      ifelses: ifelses,
       page2: page2,
+    });
     })
   });
 });
@@ -1145,8 +1179,11 @@ app.post('/page2', function(req, res) {
 
 app.get('/page3', function(req, res) {
   Page3.find({}).then(page3 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page3', {
       page3: page3,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1173,8 +1210,11 @@ app.post('/page3', function(req, res) {
 
 app.get('/page4', function(req, res) {
   Page4.find({}).then(page4 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page4', {
       page4: page4,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1201,8 +1241,11 @@ app.post('/page4', function(req, res) {
 
 app.get('/page5', function(req, res) {
   Page5.find({}).then(page5 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page5', {
       page5: page5,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1229,8 +1272,11 @@ app.post('/page5', function(req, res) {
 
 app.get('/page6', function(req, res) {
   Page6.find({}).then(page6 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page6', {
       page6: page6,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1257,8 +1303,11 @@ app.post('/page6', function(req, res) {
 
 app.get('/page7', function(req, res) {
   Page7.find({}).then(page7 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page7', {
       page7: page7,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1284,8 +1333,11 @@ app.post('/page7', function(req, res) {
 
 app.get('/page8', function(req, res) {
   Page8.find({}).then(page8 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page8', {
       page8: page8,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1311,8 +1363,11 @@ app.post('/page8', function(req, res) {
 
 app.get('/page9', function(req, res) {
   Page9.find({}).then(page9 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page9', {
       page9: page9,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1338,8 +1393,11 @@ app.post('/page9', function(req, res) {
 
 app.get('/page10', function(req, res) {
   Page10.find({}).then(page10 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page10', {
       page10: page10,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1365,8 +1423,11 @@ app.post('/page10', function(req, res) {
 
 app.get('/page11', function(req, res) {
   Page11.find({}).then(page11 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page11', {
       page11: page11,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1392,8 +1453,11 @@ app.post('/page11', function(req, res) {
 
 app.get('/page12', function(req, res) {
   Page12.find({}).then(page12 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page12', {
       page12: page12,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1419,8 +1483,11 @@ app.post('/page12', function(req, res) {
 
 app.get('/page13', function(req, res) {
   Page13.find({}).then(page13 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page13', {
       page13: page13,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1446,8 +1513,11 @@ app.post('/page13', function(req, res) {
 
 app.get('/page14', function(req, res) {
   Page14.find({}).then(page14 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page14', {
       page14: page14,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1473,8 +1543,11 @@ app.post('/page14', function(req, res) {
 
 app.get('/page15', function(req, res) {
   Page15.find({}).then(page15 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page15', {
       page15: page15,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1500,8 +1573,11 @@ app.post('/page15', function(req, res) {
 
 app.get('/page16', function(req, res) {
   Page16.find({}).then(page16 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page16', {
       page16: page16,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1527,8 +1603,11 @@ app.post('/page16', function(req, res) {
 
 app.get('/page17', function(req, res) {
   Page17.find({}).then(page17 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page17', {
       page17: page17,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1554,8 +1633,11 @@ app.post('/page17', function(req, res) {
 
 app.get('/page18', function(req, res) {
   Page18.find({}).then(page18 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page18', {
       page18: page18,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1581,8 +1663,11 @@ app.post('/page18', function(req, res) {
 
 app.get('/page19', function(req, res) {
   Page19.find({}).then(page19 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page19', {
       page19: page19,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1608,8 +1693,11 @@ app.post('/page19', function(req, res) {
 
 app.get('/page20', function(req, res) {
   Page20.find({}).then(page20 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page20', {
       page20: page20,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1635,8 +1723,11 @@ app.post('/page20', function(req, res) {
 
 app.get('/page21', function(req, res) {
   Page21.find({}).then(page21 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page21', {
       page21: page21,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1662,8 +1753,11 @@ app.post('/page21', function(req, res) {
 
 app.get('/page22', function(req, res) {
   Page22.find({}).then(page22 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page22', {
       page22: page22,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1689,8 +1783,11 @@ app.post('/page22', function(req, res) {
 
 app.get('/page23', function(req, res) {
   Page23.find({}).then(page23 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page23', {
       page23: page23,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1716,8 +1813,11 @@ app.post('/page23', function(req, res) {
 
 app.get('/page24', function(req, res) {
   Page24.find({}).then(page24 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page24', {
       page24: page24,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1743,8 +1843,11 @@ app.post('/page24', function(req, res) {
 
 app.get('/page25', function(req, res) {
   Page25.find({}).then(page25 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page25', {
       page25: page25,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -1770,8 +1873,11 @@ app.post('/page25', function(req, res) {
 
 app.get('/page26', function(req, res) {
   Page26.find({}).then(page26 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
     res.render('page26', {
       page26: page26,
+      ifelses: ifelses,
+    });
     })
   });
 });
@@ -2216,15 +2322,15 @@ app.post('/page40', function(req, res) {
 //====RENDER page41 ===//
 
 app.get('/page41', function(req, res) {
-  Page41.find({}).then(function(page41) {
-    Ending.aggregate().sample(1).then(function(endings){
-      res.render('page41', {
-        page41: page41,
-        endings: endings,
-      })
+  Page41.find({}).then(page41 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
+    res.render('page41', {
+      page41: page41,
+      ifelses: ifelses,
+    });
     })
-  })
-})
+  });
+});
 
 //==========================//
 
@@ -3875,9 +3981,12 @@ app.post('/page96', function(req, res) {
 app.get('/page100', function(req, res) {
   Page100.find({}).then(function(page100) {
     EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page100', {
+        jsons: jsons,
         page100: page100,
         endings: endings,
+      })
       })
     })
   })

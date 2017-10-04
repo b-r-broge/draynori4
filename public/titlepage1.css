@@ -21,6 +21,19 @@ body {
   overflow-y: visible;
 }
 
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
 .inputfield {
   visibility: hidden;
 }

@@ -20,6 +20,51 @@ body {
   background-size: cover;
 }
 
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
+button {
+  cursor: pointer;
+  z-index: 12;
+  mix-blend-mode: normal;
+}
+
+.buttonx {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-size: 25px;
+  mix-blend-mode: normal;
+}
+
+.buttonx:hover {
+  transform: scale(1.1);
+  filter: brightness(150%);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  mix-blend-mode: normal;
+}
+
+.buttonx img {
+  width: 50px;
+  margin-right: 10px;
+  mix-blend-mode: normal;
+}
+
 .bodywrapper {
   display: flex;
   justify-content: center;

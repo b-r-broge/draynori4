@@ -1,9 +1,9 @@
 * {
-  -webkit-transition: all .25s ease;
-  -moz-transition: all .25s ease;
-  -o-transition: all .25s ease;
-  transition: all .25s ease;
-  mix-blend-mode: multiply;
+  -webkit-transition: all .05s ease;
+  -moz-transition: all .05s ease;
+  -o-transition: all .05s ease;
+  transition: all .05s ease;
+  /*mix-blend-mode: multiply;*/
 }
 
 body {
@@ -17,6 +17,253 @@ body {
   margin: 0;
   background-image: url('/background.png');
   background-size: cover;
+}
+
+.mouseover {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-color: #EBE2D2;
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+}
+
+.mouseover img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: 150px;
+  margin-left: -355px;
+}
+
+.mouseover2 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-color: #EBE2D2;
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover2 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover2 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: 50px;
+  margin-left: -355px;
+  mix-blend-mode: normal;
+}
+
+.mouseover3 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-color: #EBE2D2;
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover3 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover3 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: -100px;
+  margin-left: -375px;
+  mix-blend-mode: normal;
+}
+
+.mouseover4 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-color: #EBE2D2;
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover4 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover4 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: 150px;
+  margin-left: -700px;
+  mix-blend-mode: normal;
+}
+
+.mouseover5 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  width: 350px;
+  background-color: #EBE2D2;
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover5 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+a:hover .mouseover5 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  position: fixed;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  margin-top: -60px;
+  margin-left: -700px;
+  mix-blend-mode: normal;
+}
+
+.iftitle {
+  font-size: 25px;
+}
+
+.iftext {
+  font-size: 18px;
 }
 
 .inputfield {
@@ -87,13 +334,19 @@ body {
 }
 
 h3 {
-  z-index: 5;
+  z-index: 0;
   margin-top: -40vh;
   margin-left: -15vw;
   position: absolute;
   font-size: 38px;
   font-family: 'Frijole', cursive;
   transform: rotate(-4deg);
+}
+
+.m1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .maps {
@@ -123,7 +376,7 @@ h3 {
 h2 {
   font-family: 'Black Ops One', cursive;
   position: absolute;
-  z-index: 4;
+  z-index: -1;
   margin-left: -20vw;
   width: 40vw;
   font-size: 30px;
@@ -152,6 +405,8 @@ h5 {
 }
 
 .linkContainer {
+  position: absolute;
+  z-index: 15;
   height: 80vh;
   z-index: 3;
   position: absolute;
@@ -164,6 +419,7 @@ h5 {
 }
 
 a {
+  z-index: 14;
   font-weight: bold;
   font-family: sans-serif;
   color: black;
@@ -189,6 +445,7 @@ a:hover {
 }
 
 .plink {
+  z-index: 13;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;

@@ -8,7 +8,16 @@
   </head>
   <body>
     <div class="bodywrapper">
-    <img src="/kukului.png"></img>
+
+      <button class="buttonx" onclick="goBack()"><img src="/btn_x.png" />Go Back</button>
+
+        <script>
+        function goBack() {
+          window.history.back();
+        }
+        </script>
+
+    <img class="kukului" src="/kukului.png"></img>
     <h2>We meet the protagonist of the adventure, an archaeologist named Dakota Jones, as he makes his way through the Kuku-Loui jungle.  It will be your job to guide him through this quest.  To do so, you'll need to use JavaScript.  On the first leg of this journey, you can control what Dakota does through if/else statements. It will look something like this:
 
       <div><span class="bold">if (condition)</span>

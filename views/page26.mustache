@@ -14,12 +14,13 @@
       {{text}}
     </h2>
     <div class="linkContainer">
-    <a href="/page84"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 84}</h5></a>
+    <a href="/page84"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <div class="mouseover"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div><div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 84}</h5></a>
     <form class="plink" action="/spider" method="post">
       <input class="inputfield" type="text" value="Man Eating Spider" name="spider" />
-      <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <h5>{go to page 41}</h5></div>
+      <div class="links"><div class="plink"><p>else if</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <div class="mouseover2"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div>
+      <div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 41}</h5></div>
     </form>
-    <a href="/page86"><div class="plink"><p>else</p> <h6>{{option3}}</h6></div> <h5>{go to page 86}</h5></a>
+    <a href="/page86"><div class="plink"><p>else</p> <h6>{{option3}}</h6></div> <div class="mouseover3"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div><div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 86}</h5></a>
   </div>
 
     {{/page26}}

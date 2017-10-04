@@ -14,11 +14,12 @@
       {{text}}
     </h2>
     <div class="linkContainer">
-    <a href="/page202"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <h5>{go to page 202}</h5></a>
+    <a href="/page202"><div class="plink"><p>if</p> <h6>{{option1}}</h6></div> <div class="mouseover"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div><div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 202}</h5></a>
 
     <form class="plink" action="/gold203" method="post">
       <input class="inputfield" type="text" value="350" name="gold203" />
-      <a href="/page203"><div class="plink"><p>else</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <h5>{go to page 203}</h5></a>
+      <a href="/page203"><div class="plink"><p>else</p> <input class="submitbtn" type="submit"><h6>{{option2}}</h6></div> <div class="mouseover2"><div>{{#ifelses}}<div class="iftitle">If/Else Tip #{{number}}:</div>
+        <div class="iftext">{{text}}</div>{{/ifelses}}</div></div><h5>{go to page 203}</h5></a>
     </form>
   </div>
 
