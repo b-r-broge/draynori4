@@ -407,7 +407,7 @@ mix-blend-mode: normal;
   width: 475px;
   height: 700px;
   margin-top: -500px;
-  margin-left: -50px;
+  margin-left: 45px;
   transform: rotate(-186deg) scale(-1.15);
   z-index: 12;
   mix-blend-mode: normal;
