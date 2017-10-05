@@ -23,6 +23,15 @@ body {
   font-weight: bold;
 }
 
+td {
+  text-align: center;
+  border: black solid 1px;
+}
+
+tr {
+  border: black solid 1px;
+}
+
 .operContainer {
   display: flex;
   flex-flow: row nowrap;
