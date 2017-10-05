@@ -22,11 +22,13 @@ body {
 .operContainer {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
 .oper {
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -34,6 +36,8 @@ body {
 }
 
 .defi {
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -41,6 +45,8 @@ body {
 }
 
 .examp {
+  margin-top: 5px;
+  margin-bottom: 5px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
