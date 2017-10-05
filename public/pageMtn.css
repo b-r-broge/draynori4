@@ -19,6 +19,13 @@ body {
   background-size: cover;
 }
 
+.operContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .question {
   width: 45px;
   position: fixed;
