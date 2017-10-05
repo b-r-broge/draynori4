@@ -26,6 +26,32 @@ body {
   align-items: center;
 }
 
+.oper {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.defi {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.examp {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.operbold {
+  font-size: 19px;
+  font-weight: bold;
+}
+
 .question {
   width: 45px;
   position: fixed;
