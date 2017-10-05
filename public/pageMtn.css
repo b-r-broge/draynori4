@@ -19,6 +19,10 @@ body {
   background-size: cover;
 }
 
+.boldtd {
+  font-weight: bold;
+}
+
 .operContainer {
   display: flex;
   flex-flow: row nowrap;
@@ -400,7 +404,7 @@ mix-blend-mode: normal;
   visibility: visible;
   color: black;
   position: fixed;
-  width: 550px;
+  width: 475px;
   height: 700px;
   margin-top: -500px;
   margin-left: 100px;
