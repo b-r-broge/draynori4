@@ -30,7 +30,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
@@ -39,7 +39,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
@@ -48,7 +48,7 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
 }
@@ -400,7 +400,7 @@ mix-blend-mode: normal;
   visibility: visible;
   color: black;
   position: fixed;
-  width: 500px;
+  width: 700px;
   height: 700px;
   margin-top: -500px;
   margin-left: 100px;
