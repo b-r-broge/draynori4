@@ -168,3 +168,9 @@ a:hover {
   font-weight: bold;
   font-size: 18px;
 }
+
+.ragsnag {
+  position: absolute;
+  margin-left: -15vw;
+  width: 600px;
+}

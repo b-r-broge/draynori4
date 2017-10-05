@@ -8,7 +8,16 @@
   </head>
   <body>
     <div class="bodywrapper">
-      <img src="/ragsnag.png"></img>
+
+      <button class="buttonx" onclick="goBack()"><img src="/btn_x.png" />Go Back</button>
+
+        <script>
+        function goBack() {
+          window.history.back();
+        }
+        </script>
+
+      <img class="ragsnag" src="/ragsnag.png"></img>
       <h2>
       Nice job!  Dakota made it to the Ragged Snag Village.  You're just a few miles from the Jungle.  In town, you can go anywhere you'd like.  Maybe you can ask for directions, or get some needed supplies.  However, there's a catch.  In the jungle, you navigate with if/else statements.  But in town you can only navigate with JSON Objects.  JSON Objects are JavaScript Objects that have key, value pairs.  Take this for example:
 

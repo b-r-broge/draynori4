@@ -43,7 +43,7 @@ body {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -89,7 +89,7 @@ a:hover .mouseover {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -137,7 +137,7 @@ a:hover .mouseover2 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -185,7 +185,7 @@ a:hover .mouseover3 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -233,7 +233,7 @@ a:hover .mouseover4 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -282,7 +282,7 @@ a:hover .mouseover5 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -492,12 +492,14 @@ h5 {
   /*border: black 2px solid;*/
   position: absolute;
   border: none;
+  background: none;
   text-decoration: none;
   color: black;
   font-size: 25px;
   margin-left: 150px;
   margin-top: -19px;
   font-family: 'Fontdiner Swanky', cursive;
+  mix-blend-mode: multiply;
 }
 
 .submitbtn1:hover {

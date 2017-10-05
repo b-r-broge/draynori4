@@ -1,6 +1,7 @@
 //=====MODELS======//
 const Ifelse = require('./models/ifelse.js');
 const Json = require('./models/json.js');
+const Dot = require('./models/dot.js');
 const Ending = require('./models/endings.js');
 const EndingTown = require('./models/endingTowns.js');
 const EndingMine = require('./models/endingMines.js');
@@ -381,6 +382,19 @@ app.post('/json', function(req, res) {
     text: req.body.text,
   }).then(json => {
   res.json(json)
+});
+});
+
+//==========================//
+
+//====CREATE DOT===//
+
+app.post('/dot', function(req, res) {
+  Dot.create({
+    number: req.body.number,
+    text: req.body.text,
+  }).then(dot => {
+  res.json(dot)
 });
 });
 
@@ -3372,15 +3386,15 @@ app.post('/page75', function(req, res) {
 //====RENDER page76 ===//
 
 app.get('/page76', function(req, res) {
-  Page76.find({}).then(function(page76) {
-    Ending.aggregate().sample(1).then(function(endings){
-      res.render('page76', {
-        page76: page76,
-        endings: endings,
-      })
+  Page76.find({}).then(page76 => {
+    Ifelse.aggregate().sample(1).then(function(ifelses){
+    res.render('page76', {
+      page76: page76,
+      ifelses: ifelses,
+    });
     })
-  })
-})
+  });
+});
 
 //==========================//
 
@@ -4014,9 +4028,12 @@ app.post('/page100', function(req, res) {
 app.get('/page101', function(req, res) {
   Page101.find({}).then(function(page101) {
     EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page101', {
+        jsons: jsons,
         page101: page101,
         endings: endings,
+      })
       })
     })
   })
@@ -4044,9 +4061,12 @@ app.post('/page101', function(req, res) {
 app.get('/page102', function(req, res) {
   Page102.find({}).then(function(page102) {
     EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page102', {
+        jsons: jsons,
         page102: page102,
         endings: endings,
+      })
       })
     })
   })
@@ -4133,10 +4153,13 @@ app.post('/page104', function(req, res) {
 
 app.get('/page105', function(req, res) {
   Page105.find({}).then(function(page105) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page105', {
+        jsons: jsons,
         page105: page105,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4223,10 +4246,13 @@ app.post('/page107', function(req, res) {
 
 app.get('/page108', function(req, res) {
   Page108.find({}).then(function(page108) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page108', {
+        jsons: jsons,
         page108: page108,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4253,10 +4279,13 @@ app.post('/page108', function(req, res) {
 
 app.get('/page109', function(req, res) {
   Page109.find({}).then(function(page109) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page109', {
+        jsons: jsons,
         page109: page109,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4283,10 +4312,13 @@ app.post('/page109', function(req, res) {
 
 app.get('/page110', function(req, res) {
   Page110.find({}).then(function(page110) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page110', {
+        jsons: jsons,
         page110: page110,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4433,10 +4465,13 @@ app.post('/page114', function(req, res) {
 
 app.get('/page115', function(req, res) {
   Page115.find({}).then(function(page115) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page115', {
+        jsons: jsons,
         page115: page115,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4463,10 +4498,13 @@ app.post('/page115', function(req, res) {
 
 app.get('/page116', function(req, res) {
   Page116.find({}).then(function(page116) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page116', {
+        jsons: jsons,
         page116: page116,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4495,10 +4533,13 @@ app.post('/page116', function(req, res) {
 
 app.get('/page117', function(req, res) {
   Page117.find({}).then(function(page117) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page117', {
+        jsons: jsons,
         page117: page117,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4525,10 +4566,13 @@ app.post('/page117', function(req, res) {
 
 app.get('/page118', function(req, res) {
   Page118.find({}).then(function(page118) {
-    EndingTown.aggregate().sample(1).then(function(endingtowns){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page118', {
+        jsons: jsons,
         page118: page118,
-        endingtowns: endingtowns,
+        endings: endings,
+      })
       })
     })
   })
@@ -4705,10 +4749,13 @@ app.post('/page123', function(req, res) {
 
 app.get('/page124', function(req, res) {
   Page124.find({}).then(function(page124) {
-    Ending.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page124', {
+        jsons: jsons,
         page124: page124,
         endings: endings,
+      })
       })
     })
   })
@@ -4737,10 +4784,13 @@ app.post('/page124', function(req, res) {
 
 app.get('/page130', function(req, res) {
   Page130.find({}).then(function(page130) {
-    Ending.aggregate().sample(1).then(function(endings){
+    EndingTown.aggregate().sample(1).then(function(endings){
+      Json.aggregate().sample(1).then(function(jsons){
       res.render('page130', {
+        jsons: jsons,
         page130: page130,
         endings: endings,
+      })
       })
     })
   })
@@ -4834,9 +4884,12 @@ app.post('/page151', function(req, res) {
 app.get('/page152', function(req, res) {
   Page152.find({}).then(function(page152) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page152', {
+        dots: dots,
         page152: page152,
         endings: endings,
+      });
       })
     })
   })
@@ -4866,9 +4919,12 @@ app.post('/page152', function(req, res) {
 app.get('/page153', function(req, res) {
   Page153.find({}).then(function(page153) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page153', {
+        dots: dots,
         page153: page153,
         endings: endings,
+      });
       })
     })
   })
@@ -4898,9 +4954,12 @@ app.post('/page153', function(req, res) {
 app.get('/page154', function(req, res) {
   Page154.find({}).then(function(page154) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page154', {
+        dots: dots,
         page154: page154,
         endings: endings,
+      });
       })
     })
   })
@@ -4930,9 +4989,12 @@ app.post('/page154', function(req, res) {
 app.get('/page155', function(req, res) {
   Page155.find({}).then(function(page155) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page155', {
+        dots: dots,
         page155: page155,
         endings: endings,
+      });
       })
     })
   })
@@ -4962,9 +5024,12 @@ app.post('/page155', function(req, res) {
 app.get('/page156', function(req, res) {
   Page156.find({}).then(function(page156) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page156', {
+        dots: dots,
         page156: page156,
         endings: endings,
+      });
       })
     })
   })
@@ -4994,9 +5059,12 @@ app.post('/page156', function(req, res) {
 app.get('/page157', function(req, res) {
   Page157.find({}).then(function(page157) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page157', {
+        dots: dots,
         page157: page157,
         endings: endings,
+      });
       })
     })
   })
@@ -5058,9 +5126,12 @@ app.post('/page158', function(req, res) {
 app.get('/page159', function(req, res) {
   Page159.find({}).then(function(page159) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page159', {
+        dots: dots,
         page159: page159,
         endings: endings,
+      });
       })
     })
   })
@@ -5154,9 +5225,12 @@ app.post('/page161', function(req, res) {
 app.get('/page162', function(req, res) {
   Page162.find({}).then(function(page162) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page162', {
+        dots: dots,
         page162: page162,
         endings: endings,
+      });
       })
     })
   })
@@ -5314,9 +5388,12 @@ app.post('/page166', function(req, res) {
 app.get('/page167', function(req, res) {
   Page167.find({}).then(function(page167) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page167', {
+        dots: dots,
         page167: page167,
         endings: endings,
+      });
       })
     })
   })
@@ -5474,9 +5551,12 @@ app.post('/page171', function(req, res) {
 app.get('/page172', function(req, res) {
   Page172.find({}).then(function(page172) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page172', {
+        dots: dots,
         page172: page172,
         endings: endings,
+      });
       })
     })
   })
@@ -5570,9 +5650,12 @@ app.post('/page174', function(req, res) {
 app.get('/page175', function(req, res) {
   Page175.find({}).then(function(page175) {
     Ending.aggregate().sample(1).then(function(endings){
+      Dot.aggregate().sample(1).then(function(dots){
       res.render('page175', {
+        dots: dots,
         page175: page175,
         endings: endings,
+      });
       })
     })
   })

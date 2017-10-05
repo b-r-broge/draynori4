@@ -19,6 +19,19 @@ body {
   background-size: cover;
 }
 
+.question {
+  width: 45px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+}
+
+.question:hover {
+  bottom: 10px;
+  left: 10px;
+  transform: scale(1.15);
+}
+
 .mouseover {
   -webkit-transition: ease-in 0s ease;
   -webkit-transition: ease-out 0s ease;
@@ -30,7 +43,7 @@ body {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -76,7 +89,7 @@ a:hover .mouseover {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -124,7 +137,7 @@ a:hover .mouseover2 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -172,7 +185,7 @@ a:hover .mouseover3 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -220,7 +233,7 @@ a:hover .mouseover4 {
   text-shadow: none;
   text-decoration: none;
   width: 350px;
-  background-color: #EBE2D2;
+  background-image: url("/popup.png");
   background-size: cover;
   background-position: center;
   z-index: 12;
@@ -258,6 +271,92 @@ a:hover .mouseover5 {
   mix-blend-mode: normal;
 }
 
+.mouseover7 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: hidden;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+  text-shadow: none;
+  text-decoration: none;
+  background-image: url("/popup.png");
+  background-size: cover;
+  background-position: center;
+  z-index: 12;
+  position: fixed;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  -webkit-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+-moz-box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+box-shadow: 10px 10px 26px -2px rgba(0,0,0,0.87);
+outline-color: black;
+outline-style: solid;
+outline-width: 1px;
+mix-blend-mode: normal;
+}
+
+.mouseover7 img {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  width: 350px;
+}
+
+.question:hover .mouseover7 {
+  -webkit-transition: ease-in 0s ease;
+  -webkit-transition: ease-out 0s ease;
+  visibility: visible;
+  color: black;
+  position: fixed;
+  width: 500px;
+  height: 700px;
+  margin-top: -500px;
+  margin-left: 100px;
+  transform: rotate(-186deg) scale(-1.15);
+  z-index: 12;
+  mix-blend-mode: normal;
+}
+
+.infoContainer {
+  position: absolute;
+  z-index: 13;
+  width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-around;
+}
+.infoHeader2 {
+  font-family: 'Frijole', cursive;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.infoHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 13;
+  font-size: 19px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.infoSubheader {
+  z-index: 14;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.submitbtn2 {
+  cursor: pointer;
+}
+
 .iftitle {
   font-size: 25px;
 }
@@ -268,6 +367,12 @@ a:hover .mouseover5 {
 
 .inputfield {
   visibility: hidden;
+}
+
+.submitbtn1 input {
+   mix-blend-mode: multiply;
+   background-color: none;
+   border: none;
 }
 
 .submitbtn1 {
@@ -282,6 +387,7 @@ a:hover .mouseover5 {
   margin-left: 150px;
   margin-top: -19px;
   font-family: 'Fontdiner Swanky', cursive;
+  mix-blend-mode: multiply;
 }
 
 .submitbtn1:hover {
@@ -301,6 +407,7 @@ a:hover .mouseover5 {
   margin-top: 25px;
   margin-left: -65px;
   font-family: 'Fontdiner Swanky', cursive;
+  mix-blend-mode: multiply;
 }
 
 .restartContainer {
