@@ -2,6 +2,7 @@
 const Ifelse = require('./models/ifelse.js');
 const Json = require('./models/json.js');
 const Dot = require('./models/dot.js');
+const Operator = require('./models/operator.js');
 const Ending = require('./models/endings.js');
 const EndingTown = require('./models/endingTowns.js');
 const EndingMine = require('./models/endingMines.js');
@@ -419,6 +420,19 @@ app.post('/dot', function(req, res) {
     text: req.body.text,
   }).then(dot => {
   res.json(dot)
+});
+});
+
+//==========================//
+
+//====CREATE Operator===//
+
+app.post('/operator', function(req, res) {
+  Operator.create({
+    number: req.body.number,
+    text: req.body.text,
+  }).then(operator => {
+  res.json(operator)
 });
 });
 
@@ -6061,9 +6075,12 @@ app.post('/page207', function(req, res) {
 app.get('/page208', function(req, res) {
   Page208.find({}).then(function(page208) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page208', {
+        operators: operators,
         page208: page208,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6093,9 +6110,12 @@ app.post('/page208', function(req, res) {
 app.get('/page210', function(req, res) {
   Page210.find({}).then(function(page210) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page210', {
+        operators: operators,
         page210: page210,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6125,9 +6145,12 @@ app.post('/page210', function(req, res) {
 app.get('/page211', function(req, res) {
   Page211.find({}).then(function(page211) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page211', {
+        operators: operators,
         page211: page211,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6157,9 +6180,12 @@ app.post('/page211', function(req, res) {
 app.get('/page212', function(req, res) {
   Page212.find({}).then(function(page212) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page212', {
+        operators: operators,
         page212: page212,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6189,9 +6215,12 @@ app.post('/page212', function(req, res) {
 app.get('/page213', function(req, res) {
   Page213.find({}).then(function(page213) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page213', {
+        operators: operators,
         page213: page213,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6221,9 +6250,12 @@ app.post('/page213', function(req, res) {
 app.get('/page214', function(req, res) {
   Page214.find({}).then(function(page214) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page214', {
+        operators: operators,
         page214: page214,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6253,9 +6285,12 @@ app.post('/page214', function(req, res) {
 app.get('/page215', function(req, res) {
   Page215.find({}).then(function(page215) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page215', {
+        operators: operators,
         page215: page215,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6285,9 +6320,12 @@ app.post('/page215', function(req, res) {
 app.get('/page216', function(req, res) {
   Page216.find({}).then(function(page216) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page216', {
+        operators: operators,
         page216: page216,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6317,9 +6355,12 @@ app.post('/page216', function(req, res) {
 app.get('/page217', function(req, res) {
   Page217.find({}).then(function(page217) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page217', {
+        operators: operators,
         page217: page217,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6349,9 +6390,12 @@ app.post('/page217', function(req, res) {
 app.get('/page218', function(req, res) {
   Page218.find({}).then(function(page218) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page218', {
+        operators: operators,
         page218: page218,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6381,9 +6425,12 @@ app.post('/page218', function(req, res) {
 app.get('/page219', function(req, res) {
   Page219.find({}).then(function(page219) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page219', {
+        operators: operators,
         page219: page219,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6413,9 +6460,12 @@ app.post('/page219', function(req, res) {
 app.get('/page220', function(req, res) {
   Page220.find({}).then(function(page220) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page220', {
+        operators: operators,
         page220: page220,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6445,9 +6495,12 @@ app.post('/page220', function(req, res) {
 app.get('/page221', function(req, res) {
   Page221.find({}).then(function(page221) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page221', {
+        operators: operators,
         page221: page221,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6477,9 +6530,12 @@ app.post('/page221', function(req, res) {
 app.get('/page222', function(req, res) {
   Page222.find({}).then(function(page222) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page222', {
+        operators: operators,
         page222: page222,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6509,9 +6565,12 @@ app.post('/page222', function(req, res) {
 app.get('/page223', function(req, res) {
   Page223.find({}).then(function(page223) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page223', {
+        operators: operators,
         page223: page223,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6541,9 +6600,12 @@ app.post('/page223', function(req, res) {
 app.get('/page224', function(req, res) {
   Page224.find({}).then(function(page224) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page224', {
+        operators: operators,
         page224: page224,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6573,9 +6635,12 @@ app.post('/page224', function(req, res) {
 app.get('/page225', function(req, res) {
   Page225.find({}).then(function(page225) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page225', {
+        operators: operators,
         page225: page225,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6605,9 +6670,12 @@ app.post('/page225', function(req, res) {
 app.get('/page226', function(req, res) {
   Page226.find({}).then(function(page226) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page226', {
+        operators: operators,
         page226: page226,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6637,9 +6705,12 @@ app.post('/page226', function(req, res) {
 app.get('/page227', function(req, res) {
   Page227.find({}).then(function(page227) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page227', {
+        operators: operators,
         page227: page227,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6669,9 +6740,12 @@ app.post('/page227', function(req, res) {
 app.get('/page228', function(req, res) {
   Page228.find({}).then(function(page228) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page228', {
+        operators: operators,
         page228: page228,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6701,9 +6775,12 @@ app.post('/page228', function(req, res) {
 app.get('/page229', function(req, res) {
   Page229.find({}).then(function(page229) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page229', {
+        operators: operators,
         page229: page229,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6733,9 +6810,12 @@ app.post('/page229', function(req, res) {
 app.get('/page230', function(req, res) {
   Page230.find({}).then(function(page230) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page230', {
+        operators: operators,
         page230: page230,
         endingmounts: endingmounts,
+      });
       })
     })
   })
@@ -6765,9 +6845,12 @@ app.post('/page230', function(req, res) {
 app.get('/page231', function(req, res) {
   Page231.find({}).then(function(page231) {
     EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
       res.render('page231', {
+        operators: operators,
         page231: page231,
         endingmounts: endingmounts,
+      });
       })
     })
   })
