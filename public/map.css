@@ -236,3 +236,18 @@ span {
 .ruin img {
   width: 50px;
 }
+
+.piranha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+  font-size: 17px;
+  font-family: 'Frijole', cursive;
+}
+
+.piranha img {
+  width: 50px;
+}

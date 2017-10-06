@@ -14,6 +14,7 @@ const Kuku = require('./models/locationKuku.js');
 const Mine= require('./models/locationMine.js');
 const Mount = require('./models/locationMount.js');
 const Snag = require('./models/locationSnag.js');
+const Piranha = require('./models/locationPiranha.js');
 const Spider = require('./models/locationSpider.js');
 const Croc = require('./models/locationCroc.js');
 const Cave = require('./models/locationCave.js');
@@ -212,6 +213,8 @@ const Page228 = require('./models/page228.js');
 const Page229 = require('./models/page229.js');
 const Page230 = require('./models/page230.js');
 const Page231 = require('./models/page231.js');
+const Page232 = require('./models/page232.js');
+const Page233 = require('./models/page233.js');
 
 //=================//
 
@@ -226,7 +229,7 @@ const mustacheExpress = require('mustache-express');
 const session = require('express-session');
 // const cors = require('cors')
 const app = express();
-const url = process.env.MONGOLAB_URI;
+const url = 'mongodb://EthanJarrell:EJ3102nl1@ds147884.mlab.com:47884/draynori2';
 //=========================//
 
 //====SET APP ENGINE===//
@@ -753,6 +756,7 @@ app.post('/total_reset', function(req, res){
                               Bear.remove({user: req.session.username}).then(function(bears){
                                 Cave.remove({user: req.session.username}).then(function(caves){
                                   Ruin.remove({user: req.session.username}).then(function(ruins){
+                                    Piranha.remove({user: req.session.username}).then(function(piranhas){
 
       res.render('total_reset', {
 
@@ -761,6 +765,7 @@ app.post('/total_reset', function(req, res){
         snags: snags,
         mounts: mounts,
         mines: mines,
+        piranhas: piranhas,
         crocs: crocs,
         spiders: spiders,
         bears: bears,
@@ -800,6 +805,7 @@ app.post('/total_reset', function(req, res){
           });
         });
       });
+    });
 
 //==========================//
 
@@ -816,6 +822,7 @@ app.post('/map_reset', function(req, res){
                 Bear.remove({user: req.session.username}).then(function(bears){
                   Cave.remove({user: req.session.username}).then(function(caves){
                     Ruin.remove({user: req.session.username}).then(function(ruins){
+                      Piranha.remove({user: req.session.username}).then(function(piranhas){
 
       res.render('map_reset', {
         users: users,
@@ -828,6 +835,7 @@ app.post('/map_reset', function(req, res){
         bears: bears,
         caves: caves,
         ruins: ruins,
+        piranhas: piranhas,
                             });
                           });
                         });
@@ -840,6 +848,7 @@ app.post('/map_reset', function(req, res){
           });
         });
       });
+    });
 
 //==========================//
 
@@ -864,6 +873,19 @@ app.post('/snag', function(req, res) {
     user: req.session.username,
   }).then(snagss => {
   res.redirect('/page100')
+});
+});
+
+//==========================//
+
+//====CREATE NEW PIRANHA===//
+
+app.post('/piranha', function(req, res) {
+  Piranha.create({
+    piranha: req.body.piranha,
+    user: req.session.username,
+  }).then(piranhas => {
+  res.redirect('/page208')
 });
 });
 
@@ -981,6 +1003,7 @@ app.get('/map', function(req, res) {
                 Bear.findOne({user: req.session.username}).then(function(bears){
                   Cave.findOne({user: req.session.username}).then(function(caves){
                     Ruin.findOne({user: req.session.username}).then(function(ruins){
+                      Piranha.findOne({user: req.session.username}).then(function(piranhas){
 
       res.render('map', {
         users: users,
@@ -993,6 +1016,7 @@ app.get('/map', function(req, res) {
         bears: bears,
         caves: caves,
         ruins: ruins,
+        piranhas: piranhas,
                     });
                   });
                 });
@@ -1003,6 +1027,7 @@ app.get('/map', function(req, res) {
       });
     });
   });
+});
 });
 });
 
@@ -6862,6 +6887,76 @@ app.get('/page231', function(req, res) {
 
 app.post('/page231', function(req, res) {
   Page231.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page232 ===//
+
+app.get('/page232', function(req, res) {
+  Page232.find({}).then(function(page232) {
+    EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
+      res.render('page232', {
+        operators: operators,
+        page232: page232,
+        endingmounts: endingmounts,
+      });
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page232 ===//
+
+app.post('/page232', function(req, res) {
+  Page232.create({
+    text: req.body.text,
+    option1: req.body.option1,
+    option2: req.body.option2,
+    option3: req.body.option3,
+    option4: req.body.option4,
+    option5: req.body.option5,
+  }).then(page => {
+  res.redirect('/thanks')
+});
+});
+
+//==========================//
+
+//====RENDER page233 ===//
+
+app.get('/page233', function(req, res) {
+  Page233.find({}).then(function(page233) {
+    EndingCanyon.aggregate().sample(1).then(function(endingmounts){
+      Operator.aggregate().sample(1).then(function(operators){
+      res.render('page233', {
+        operators: operators,
+        page233: page233,
+        endingmounts: endingmounts,
+      });
+      })
+    })
+  })
+})
+
+//==========================//
+
+//====POST page233 ===//
+
+app.post('/page233', function(req, res) {
+  Page233.create({
     text: req.body.text,
     option1: req.body.option1,
     option2: req.body.option2,
