@@ -31,6 +31,7 @@ const Gold73 = require('./models/gold73.js');
 const Gold74 = require('./models/gold74.js');
 const Gold200 = require('./models/gold200.js');
 const Gold203 = require('./models/gold203.js');
+const Gold228 = require('./models/gold228.js');
 const Page1 = require('./models/page1.js');
 const Page2 = require('./models/page2.js');
 const Page3 = require('./models/page3.js');
@@ -584,6 +585,19 @@ app.post('/gold203', function(req, res) {
 
 //==========================//
 
+//====CREATE NEW GOLD PAGE 228===//
+
+app.post('/gold228', function(req, res) {
+  Gold228.create({
+    gold228: req.body.gold228,
+    user: req.session.username,
+  }).then(gold228 => {
+  res.redirect('/page229')
+});
+});
+
+//==========================//
+
 //====GET ALL GOLD===//
 
 app.get('/gold', function(req, res) {
@@ -599,6 +613,7 @@ app.get('/gold', function(req, res) {
                     Gold74.findOne({user: req.session.username}).then(function(gold74){
                       Gold200.findOne({user: req.session.username}).then(function(gold200){
                         Gold203.findOne({user: req.session.username}).then(function(gold203){
+                          Gold228.findOne({user: req.session.username}).then(function(gold228){
 
       res.render('gold', {
         users: users,
@@ -613,6 +628,8 @@ app.get('/gold', function(req, res) {
         gold74: gold74,
         gold200: gold200,
         gold203: gold203,
+        gold228: gold228,
+      });
                             });
                           });
                         });
@@ -694,6 +711,7 @@ app.post('/gold_reset', function(req, res){
                     Gold74.remove({user: req.session.username}).then(function(gold74){
                       Gold200.remove({user: req.session.username}).then(function(gold200){
                         Gold203.remove({user: req.session.username}).then(function(gold203){
+                          Gold228.remove({user: req.session.username}).then(function(gold228){
 
       res.render('gold_reset', {
         users: users,
@@ -712,6 +730,8 @@ app.post('/gold_reset', function(req, res){
         gold74: gold74,
         gold200: gold200,
         gold203: gold203,
+        gold228: gold228,
+      });
                             });
                           });
                         });
@@ -747,6 +767,7 @@ app.post('/total_reset', function(req, res){
                     Gold74.remove({user: req.session.username}).then(function(gold74){
                       Gold200.remove({user: req.session.username}).then(function(gold200){
                         Gold203.remove({user: req.session.username}).then(function(gold203){
+                          Gold228.remove({user: req.session.username}).then(function(gold228){
                   Kuku.remove({user: req.session.username}).then(function(kukus){
                     Snag.remove({user: req.session.username}).then(function(snags){
                       Mount.remove({user: req.session.username}).then(function(mounts){
@@ -782,6 +803,8 @@ app.post('/total_reset', function(req, res){
         gold74: gold74,
         gold200: gold200,
         gold203: gold203,
+        gold228: gold228,
+      });
                                                   });
                                                 });
                                               });
