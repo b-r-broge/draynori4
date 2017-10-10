@@ -302,7 +302,7 @@ app.get('/start', function(req, res) {
   User.find({username: req.session.username}).then(function(users) {
   res.render('astart', {
     users: users,
-  });
+   });
 });
 });
 
